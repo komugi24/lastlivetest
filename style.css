@@ -10,7 +10,7 @@
 html{scroll-behavior:smooth}
 body{margin:0;color:var(--ink);font-family:"Noto Serif JP",serif;background:#f8fdff}
 a{color:inherit;text-decoration:none}
-.nav{position:fixed;z-index:20;top:0;left:0;right:0;height:82px;display:flex;align-items:center;padding:14px 4vw;color:white;background:linear-gradient(#0574cf66,transparent);backdrop-filter:blur(2px)}
+.nav{position:fixed;z-index:20;top:0;left:0;right:0;height:82px;display:flex;align-items:center;padding:0;color:white;background:linear-gradient(#0574cf66,transparent);backdrop-filter:blur(2px)}
 .brand img{width:78px;height:52px;object-fit:contain;object-position:center;border-radius:0}
 .nav nav{display:flex;gap:3.2vw;margin:auto;font-size:12px;letter-spacing:.25em}
 .nav nav a{padding:10px 0;border-bottom:1px solid transparent}
@@ -50,7 +50,7 @@ footer{padding:50px;text-align:center;background:#073b8f;color:white}
 footer img{width:90px;height:60px;object-fit:cover;border-radius:0}
 footer p{font-size:11px;letter-spacing:.15em}
 @media(max-width:760px){
- .nav{height:65px;padding:10px 4vw}.brand img{width:58px;height:40px}.nav nav{gap:13px;font-size:8px;letter-spacing:.12em}.x-link{font-size:18px}
+ .nav{height:65px;padding:0}.brand img{width:58px;height:40px}.nav nav{gap:13px;font-size:8px;letter-spacing:.12em}.x-link{font-size:18px}
  .hero-photo{background-position:center center}.hero-content{padding:0 7vw 9vh}.hero-message{top:17vh;right:7vw;font-size:14px}
  .hero{min-height:100svh}.section{padding:90px 7vw}.concept{display:block}.concept>div+div{margin-top:55px}
  .member-grid{grid-template-columns:repeat(2,1fr)}.member-grid div{min-height:120px}
