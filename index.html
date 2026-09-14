@@ -47,19 +47,94 @@
       </div>
     </section>
 
-    <section id="member" class="section">
-      <div class="section-label">MEMBER</div>
-      <h2>メンバー紹介</h2>
-      <p class="lead">メンバー紹介はここに追加できます。</p>
-      <div class="member-grid">
-  <a href="member1.html">Lead.ファー</a>
-  <div>Top.こむぎ</div>
-  <div>2nd.クリストファー</div>
-  <div>3rd.よじゅん</div>
-  <div>Bass.タンタル</div>
-  <div>Per.しゅがー</div>
+   <section id="member" class="section">
+  <div class="section-label">MEMBER</div>
+  <h2>6人で過ごした時間。</h2>
+  <p class="lead">それぞれのページを開いて、メンバーをもっと知ってください。</p>
+
+  <div class="member-grid">
+
+    <!-- ファー -->
+    <button class="member-card" onclick="openMember()">
+      <span>MEMBER 01</span>
+      <strong>ファー</strong>
+    </button>
+
+    <!-- まだ未登録 -->
+    <div class="member-card member-empty">
+      <span>MEMBER 02</span>
+    </div>
+
+    <div class="member-card member-empty">
+      <span>MEMBER 03</span>
+    </div>
+
+    <div class="member-card member-empty">
+      <span>MEMBER 04</span>
+    </div>
+
+    <div class="member-card member-empty">
+      <span>MEMBER 05</span>
+    </div>
+
+    <div class="member-card member-empty">
+      <span>MEMBER 06</span>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ファーの詳細タブ -->
+<div id="member-modal" class="member-modal">
+
+  <div class="member-overlay" onclick="closeMember()"></div>
+
+  <div class="member-panel">
+
+    <button class="member-close" onclick="closeMember()">×</button>
+
+    <div class="member-panel-label">MEMBER 01</div>
+
+    <h2>ファー</h2>
+
+    <p class="member-role">LEAD</p>
+
+    <!-- 写真スライダー -->
+    <div class="member-slider">
+
+      <div class="member-slide">
+        <img src="images/far1.jpg" alt="ファー 写真1">
+      </div>
+
+      <div class="member-slide">
+        <img src="images/far2.jpg" alt="ファー 写真2">
+      </div>
+
+      <div class="member-slide">
+        <img src="images/far3.jpg" alt="ファー 写真3">
+      </div>
+
+    </div>
+
+    <div class="slider-dots">
+      <span>●</span>
+      <span>○</span>
+      <span>○</span>
+    </div>
+
+    <div class="member-profile">
+      <p>
+        歌風Cruise!!のリードボーカル。
+      </p>
+
+      <p>
+        ここにファーの紹介文を入れられます。
+      </p>
+    </div>
+
+  </div>
 </div>
-    </section>
 
     <section id="history" class="section blue-section">
       <div class="section-label">HISTORY</div>
