@@ -6,63 +6,218 @@
   --ink:#073b8f;
   --white:#fff;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;color:var(--ink);font-family:"Noto Serif JP",serif;background:#f8fdff}
-a{color:inherit;text-decoration:none}
-.nav{position:fixed;z-index:20;top:0;left:0;right:0;height:82px;display:flex;align-items:center;padding:0;color:white;background:linear-gradient(#0574cf66,transparent);backdrop-filter:blur(2px)}
-.brand img{width:78px;height:52px;object-fit:contain;object-position:center;border-radius:0}
-.nav nav{display:flex;gap:3.2vw;margin:auto;font-size:12px;letter-spacing:.25em}
-.nav nav a{padding:10px 0;border-bottom:1px solid transparent}
-.nav nav a:hover{border-bottom-color:white}
-.x-link{font-size:23px}
-.hero{min-height:100svh;position:relative;overflow:hidden;color:white;display:flex;align-items:flex-end}
-.hero-photo{position:absolute;inset:0;background:url("images/main.jpg") center center/cover no-repeat}
-.hero-wash{position:absolute;inset:0;background:linear-gradient(90deg,#0a62c455,#ffffff00 55%),linear-gradient(0deg,#075bb366,#0000 45%)}
-.hero-content{position:relative;z-index:2;padding:0 6vw 11vh;text-shadow:0 2px 15px #0750a455}
-.eyebrow{font-size:clamp(25px,4vw,58px);letter-spacing:.06em;margin:0 0 12px}
-h1{font-size:clamp(52px,9vw,128px);letter-spacing:.18em;margin:0 0 12px;font-weight:400}
-.date{font-size:clamp(24px,3vw,44px);letter-spacing:.12em}.date span{font-size:.48em}
-.venue{font-size:20px;letter-spacing:.25em;margin-top:7px}
-.hero-message{position:absolute;z-index:2;right:7vw;top:25vh;font-size:clamp(17px,2vw,27px);line-height:2.2;letter-spacing:.2em}
-.wave{position:absolute;z-index:2;bottom:0;left:-2%;width:104%;font-size:52px;letter-spacing:-.18em;transform:rotate(-1deg);opacity:.95}
-.scroll{position:absolute;z-index:3;right:3vw;bottom:8vh;writing-mode:vertical-rl;letter-spacing:.25em;font-size:11px}
-.section{padding:130px 10vw;min-height:70vh}
-.section-label{font-size:11px;letter-spacing:.35em;margin-bottom:28px;color:#2872da}
-.section h2{font-size:clamp(35px,5vw,68px);font-weight:400;line-height:1.45;margin:0 0 35px}
-.section p{font-size:17px;line-height:2.1;letter-spacing:.08em}
-.concept{display:grid;grid-template-columns:1fr 1.5fr;gap:7vw;background:linear-gradient(135deg,#f8fdff,#dff6ff)}
-.member-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:50px}
-.member-grid div{min-height:160px;display:flex;align-items:end;padding:20px;background:#d7effa;font-size:12px;letter-spacing:.15em}
-.blue-section{background:var(--blue);color:white}
-.blue-section .section-label{color:white}
-.timeline{border-left:1px solid #ffffff77;padding-left:28px;max-width:700px}
-.timeline p{border-bottom:1px solid #ffffff44;padding:17px 0;margin:0}
-.timeline span{display:inline-block;width:100px}
-.live{background:#eefaff}
-.live-card{max-width:720px;border:1px solid #86bde8;background:white;padding:45px;box-shadow:0 18px 50px #0a5aa315}
-.live-card>div{display:flex;justify-content:space-between;border-bottom:1px solid #d7eaf6;padding:18px 0}
-.live-card small{letter-spacing:.2em}.live-card strong{font-size:18px;font-weight:400}
-.button{display:inline-block;margin-top:30px;padding:15px 28px;background:var(--blue);color:white;letter-spacing:.12em}
-.message{text-align:center;background:#fff}
-.message .thanks{font-size:25px;margin-top:60px}
-footer{padding:50px;text-align:center;background:#073b8f;color:white}
-footer img{width:90px;height:60px;object-fit:contain;border-radius:0}
-footer p{font-size:11px;letter-spacing:.15em}
-@media(max-width:760px){
-  .nav{height:65px;padding:0}
-  .brand img{width:58px;height:40px}
-  .nav nav{gap:13px;font-size:8px;letter-spacing:.12em}
-  .x-link{font-size:18px}
-  .hero-photo{ background-position:center center;
-    background-size:contain;
-    background-repeat:no-repeat;}
-  .wave{font-size:30px; }
-  .hero-content{padding:0 7vw 9vh}
-  .hero-message{top:17vh;right:7vw;font-size:14px}
- .hero{min-height:100svh}.section{padding:90px 7vw}.concept{display:block}.concept>div+div{margin-top:55px}
- .member-grid{grid-template-columns:repeat(2,1fr)}.member-grid div{min-height:120px}
- .live-card{padding:28px}.live-card>div{display:block}.live-card strong{display:block;margin-top:7px}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  color:var(--ink);
+  font-family:"Noto Serif JP",serif;
+  background:#f8fdff;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+
+/* =========================
+   NAV
+========================= */
+
+.nav{
+  position:fixed;
+  z-index:20;
+  top:0;
+  left:0;
+  right:0;
+  height:82px;
+  display:flex;
+  align-items:center;
+  padding:0;
+  color:white;
+  background:linear-gradient(#0574cf66,transparent);
+  backdrop-filter:blur(2px);
+}
+
+.brand img{
+  width:78px;
+  height:52px;
+  object-fit:contain;
+  object-position:center;
+  border-radius:0;
+}
+
+.nav nav{
+  display:flex;
+  gap:3.2vw;
+  margin:auto;
+  font-size:12px;
+  letter-spacing:.25em;
+}
+
+.nav nav a{
+  padding:10px 0;
+  border-bottom:1px solid transparent;
+}
+
+.nav nav a:hover{
+  border-bottom-color:white;
+}
+
+.x-link{
+  font-size:23px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  min-height:100svh;
+  position:relative;
+  overflow:hidden;
+  color:white;
+  display:flex;
+  align-items:flex-end;
+}
+
+.hero-photo{
+  position:absolute;
+  inset:0;
+  background:url("images/main.jpg") center center/cover no-repeat;
+}
+
+.hero-wash{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,#0a62c455,#ffffff00 55%),
+    linear-gradient(0deg,#075bb366,#0000 45%);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  padding:0 6vw 11vh;
+  text-shadow:0 2px 15px #0750a455;
+}
+
+.eyebrow{
+  font-size:clamp(25px,4vw,58px);
+  letter-spacing:.06em;
+  margin:0 0 12px;
+}
+
+h1{
+  font-size:clamp(52px,9vw,128px);
+  letter-spacing:.18em;
+  margin:0 0 12px;
+  font-weight:400;
+}
+
+.date{
+  font-size:clamp(24px,3vw,44px);
+  letter-spacing:.12em;
+}
+
+.date span{
+  font-size:.48em;
+}
+
+.venue{
+  font-size:20px;
+  letter-spacing:.25em;
+  margin-top:7px;
+}
+
+.hero-message{
+  position:absolute;
+  z-index:2;
+  right:7vw;
+  top:25vh;
+  font-size:clamp(17px,2vw,27px);
+  line-height:2.2;
+  letter-spacing:.2em;
+}
+
+.wave{
+  position:absolute;
+  z-index:2;
+  bottom:0;
+  left:-2%;
+  width:104%;
+  font-size:52px;
+  letter-spacing:-.18em;
+  transform:rotate(-1deg);
+  opacity:.95;
+}
+
+.scroll{
+  position:absolute;
+  z-index:3;
+  right:3vw;
+  bottom:8vh;
+  writing-mode:vertical-rl;
+  letter-spacing:.25em;
+  font-size:11px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section{
+  padding:130px 10vw;
+  min-height:70vh;
+}
+
+.section-label{
+  font-size:11px;
+  letter-spacing:.35em;
+  margin-bottom:28px;
+  color:#2872da;
+}
+
+.section h2{
+  font-size:clamp(35px,5vw,68px);
+  font-weight:400;
+  line-height:1.45;
+  margin:0 0 35px;
+}
+
+.section p{
+  font-size:17px;
+  line-height:2.1;
+  letter-spacing:.08em;
+}
+
+
+/* =========================
+   CONCEPT
+========================= */
+
+.concept{
+  display:grid;
+  grid-template-columns:1fr 1.5fr;
+  gap:7vw;
+  background:linear-gradient(135deg,#f8fdff,#dff6ff);
+}
+
+
+/* =========================
+   MEMBER
+========================= */
+
 .member-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -71,14 +226,14 @@ footer p{font-size:11px;letter-spacing:.15em}
 }
 
 .member-card{
+  position:relative;
+  overflow:hidden;
   min-height:160px;
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  justify-content:flex-end;
   padding:20px;
+  display:flex;
+  align-items:flex-end;
+  color:white;
   background:#d7effa;
-  color:var(--ink);
   border:none;
   font-family:inherit;
   text-align:left;
@@ -90,20 +245,61 @@ footer p{font-size:11px;letter-spacing:.15em}
   background:#c5e8f7;
 }
 
-.member-card span{
+
+/* カードの写真 */
+
+.member-card img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+
+  /* 顔が見えやすい位置 */
+  object-position:center 35%;
+}
+
+
+/* 写真の上にかける薄いグラデーション */
+
+.member-card-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      transparent 25%,
+      rgba(7,59,143,.65)
+    );
+}
+
+
+/* カード内の文字 */
+
+.member-card-text{
+  position:relative;
+  z-index:2;
+}
+
+.member-card-text span{
+  display:block;
   font-size:12px;
   letter-spacing:.15em;
 }
 
-.member-card strong{
+.member-card-text strong{
+  display:block;
   margin-top:8px;
   font-size:22px;
   font-weight:400;
   letter-spacing:.12em;
 }
 
+
+/* 未登録メンバー */
+
 .member-empty{
   cursor:default;
+  color:var(--ink);
 }
 
 .member-empty:hover{
@@ -128,6 +324,9 @@ footer p{font-size:11px;letter-spacing:.15em}
   display:flex;
 }
 
+
+/* 背景 */
+
 .member-overlay{
   position:absolute;
   inset:0;
@@ -135,6 +334,9 @@ footer p{font-size:11px;letter-spacing:.15em}
   backdrop-filter:blur(3px);
   animation:fadeIn .35s ease;
 }
+
+
+/* 詳細パネル */
 
 .member-panel{
   position:relative;
@@ -148,6 +350,9 @@ footer p{font-size:11px;letter-spacing:.15em}
   animation:panelUp .45s ease;
 }
 
+
+/* ×ボタン */
+
 .member-close{
   position:absolute;
   top:18px;
@@ -160,6 +365,9 @@ footer p{font-size:11px;letter-spacing:.15em}
   line-height:1;
   cursor:pointer;
 }
+
+
+/* MEMBER 01 */
 
 .member-panel-label{
   color:#2872da;
@@ -214,15 +422,37 @@ footer p{font-size:11px;letter-spacing:.15em}
 }
 
 
-/* 写真の下の ● ○ ○ */
+/* =========================
+   SLIDER DOTS
+========================= */
 
 .slider-dots{
-  text-align:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:9px;
   margin:15px 0 30px;
-  color:#2872da;
-  font-size:11px;
-  letter-spacing:8px;
 }
+
+.slider-dots button{
+  width:7px;
+  height:7px;
+  padding:0;
+  border:1px solid #2872da;
+  border-radius:50%;
+  background:transparent;
+  cursor:pointer;
+  transition:all .25s ease;
+}
+
+.slider-dots button.active{
+  background:#2872da;
+}
+
+
+/* =========================
+   MEMBER PROFILE
+========================= */
 
 .member-profile{
   max-width:600px;
@@ -236,6 +466,103 @@ footer p{font-size:11px;letter-spacing:.15em}
 
 
 /* =========================
+   HISTORY
+========================= */
+
+.blue-section{
+  background:var(--blue);
+  color:white;
+}
+
+.blue-section .section-label{
+  color:white;
+}
+
+.timeline{
+  border-left:1px solid #ffffff77;
+  padding-left:28px;
+  max-width:700px;
+}
+
+.timeline p{
+  border-bottom:1px solid #ffffff44;
+  padding:17px 0;
+  margin:0;
+}
+
+.timeline span{
+  display:inline-block;
+  width:100px;
+}
+
+
+/* =========================
+   LIVE
+========================= */
+
+.live{
+  background:#eefaff;
+}
+
+.live-card{
+  max-width:720px;
+  border:1px solid #86bde8;
+  background:white;
+  padding:45px;
+  box-shadow:0 18px 50px #0a5aa315;
+}
+
+.live-card>div{
+  display:flex;
+  justify-content:space-between;
+  border-bottom:1px solid #d7eaf6;
+  padding:18px 0;
+}
+
+.live-card small{
+  letter-spacing:.2em;
+}
+
+.live-card strong{
+  font-size:18px;
+  font-weight:400;
+}
+
+.button{
+  display:inline-block;
+  margin-top:30px;
+  padding:15px 28px;
+  background:var(--blue);
+  color:white;
+  letter-spacing:.12em;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  padding:50px;
+  text-align:center;
+  background:#073b8f;
+  color:white;
+}
+
+footer img{
+  width:90px;
+  height:60px;
+  object-fit:contain;
+  border-radius:0;
+}
+
+footer p{
+  font-size:11px;
+  letter-spacing:.15em;
+}
+
+
+/* =========================
    ANIMATION
 ========================= */
 
@@ -243,6 +570,7 @@ footer p{font-size:11px;letter-spacing:.15em}
   from{
     opacity:0;
   }
+
   to{
     opacity:1;
   }
@@ -253,6 +581,7 @@ footer p{font-size:11px;letter-spacing:.15em}
     transform:translateY(100%);
     opacity:0;
   }
+
   to{
     transform:translateY(0);
     opacity:1;
@@ -266,6 +595,71 @@ footer p{font-size:11px;letter-spacing:.15em}
 
 @media(max-width:760px){
 
+  .nav{
+    height:65px;
+    padding:0;
+  }
+
+  .brand img{
+    width:58px;
+    height:40px;
+  }
+
+  .nav nav{
+    gap:13px;
+    font-size:8px;
+    letter-spacing:.12em;
+  }
+
+  .x-link{
+    font-size:18px;
+  }
+
+
+  /* スマホのメイン画像 */
+
+  .hero-photo{
+    background-position:center center;
+    background-size:contain;
+    background-repeat:no-repeat;
+  }
+
+  .hero{
+    min-height:100svh;
+  }
+
+  .hero-content{
+    padding:0 7vw 9vh;
+  }
+
+  .hero-message{
+    top:17vh;
+    right:7vw;
+    font-size:14px;
+  }
+
+  .wave{
+    font-size:30px;
+  }
+
+
+  /* セクション */
+
+  .section{
+    padding:90px 7vw;
+  }
+
+  .concept{
+    display:block;
+  }
+
+  .concept>div+div{
+    margin-top:55px;
+  }
+
+
+  /* MEMBER */
+
   .member-grid{
     grid-template-columns:repeat(2,1fr);
   }
@@ -275,9 +669,25 @@ footer p{font-size:11px;letter-spacing:.15em}
     padding:18px;
   }
 
-  .member-card strong{
+  .member-card-text{
+    left:0;
+    bottom:0;
+  }
+
+  .member-card-text span{
+    font-size:10px;
+  }
+
+  .member-card-text strong{
     font-size:18px;
   }
+
+  .member-card img{
+    object-position:center 35%;
+  }
+
+
+  /* MEMBER DETAIL */
 
   .member-panel{
     padding:40px 7vw 45px;
@@ -297,69 +707,21 @@ footer p{font-size:11px;letter-spacing:.15em}
   .member-slide img{
     aspect-ratio:4 / 5;
   }
-.member-card{
-  position:relative;
-  overflow:hidden;
-  min-height:160px;
-  padding:20px;
-  display:flex;
-  align-items:flex-end;
-  color:white;
-  background:#d7effa;
-  border:none;
-  font-family:inherit;
-  text-align:left;
-  cursor:pointer;
-}
 
-.member-card img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center 35%;
-}
 
-.member-card-overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    transparent 25%,
-    rgba(7,59,143,.65)
-  );
-}
+  /* LIVE */
 
-.member-card-text{
-  position:relative;
-  z-index:2;
-}
-
-.member-card-text span{
-  display:block;
-  font-size:12px;
-  letter-spacing:.15em;
-}
-
-.member-card-text strong{
-  display:block;
-  margin-top:8px;
-  font-size:22px;
-  font-weight:400;
-  letter-spacing:.12em;
-}
-
-@media(max-width:760px){
-  .member-card{
-    min-height:120px;
-    padding:18px;
+  .live-card{
+    padding:28px;
   }
 
-  .member-card img{
-    object-position:center 35%;
+  .live-card>div{
+    display:block;
   }
 
-  .member-card-text strong{
-    font-size:18px;
+  .live-card strong{
+    display:block;
+    margin-top:7px;
   }
+
 }
