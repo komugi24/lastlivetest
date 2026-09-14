@@ -225,24 +225,31 @@ h1{
   margin-top:50px;
 }
 
+
+/* メンバーカード */
+
 .member-card{
   position:relative;
   overflow:hidden;
+
+  width:100%;
   min-height:160px;
+
   padding:20px;
+
   display:flex;
   align-items:flex-end;
-  color:white;
-  background:#d7effa;
+
   border:none;
+  border-radius:0;
+
+  background:#d7effa;
+  color:white;
+
   font-family:inherit;
   text-align:left;
-  cursor:pointer;
-  transition:background .3s ease;
-}
 
-.member-card:hover{
-  background:#c5e8f7;
+  cursor:pointer;
 }
 
 
@@ -250,30 +257,46 @@ h1{
 
 .member-card img{
   position:absolute;
-  inset:0;
+
+  top:0;
+  left:0;
+
   width:100%;
   height:100%;
+
+  display:block;
+
   object-fit:cover;
 
   /* 顔が見えやすい位置 */
   object-position:center 35%;
+
+  z-index:0;
 }
 
 
-/* 写真の上にかける薄いグラデーション */
+/* 写真の上の薄い色 */
 
 .member-card-overlay{
   position:absolute;
-  inset:0;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
   background:
     linear-gradient(
-      transparent 25%,
-      rgba(7,59,143,.65)
+      transparent 20%,
+      rgba(7,59,143,.72)
     );
+
+  z-index:1;
 }
 
 
-/* カード内の文字 */
+/* カードの文字 */
 
 .member-card-text{
   position:relative;
@@ -289,17 +312,20 @@ h1{
 .member-card-text strong{
   display:block;
   margin-top:8px;
+
   font-size:22px;
   font-weight:400;
+
   letter-spacing:.12em;
 }
 
 
-/* 未登録メンバー */
+/* 未登録 */
 
 .member-empty{
   cursor:default;
   color:var(--ink);
+  background:#d7effa;
 }
 
 .member-empty:hover{
@@ -314,8 +340,11 @@ h1{
 .member-modal{
   position:fixed;
   inset:0;
+
   z-index:100;
+
   display:none;
+
   align-items:flex-end;
   justify-content:center;
 }
@@ -330,8 +359,11 @@ h1{
 .member-overlay{
   position:absolute;
   inset:0;
+
   background:rgba(7,59,143,.22);
+
   backdrop-filter:blur(3px);
+
   animation:fadeIn .35s ease;
 }
 
@@ -341,52 +373,81 @@ h1{
 .member-panel{
   position:relative;
   z-index:2;
+
   width:min(760px,100%);
+
   max-height:92svh;
+
   overflow-y:auto;
+
   background:rgba(255,255,255,.96);
+
   padding:45px 7vw 60px;
-  box-shadow:0 -15px 60px rgba(7,59,143,.18);
+
+  box-shadow:
+    0 -15px 60px rgba(7,59,143,.18);
+
   animation:panelUp .45s ease;
 }
 
 
-/* ×ボタン */
+/* 閉じるボタン */
 
 .member-close{
   position:absolute;
+
   top:18px;
   right:22px;
+
   border:none;
   background:none;
+
   color:var(--ink);
+
   font-size:35px;
   font-weight:200;
+
   line-height:1;
+
   cursor:pointer;
 }
 
 
-/* MEMBER 01 */
+/* ラベル */
 
 .member-panel-label{
   color:#2872da;
+
   font-size:11px;
+
   letter-spacing:.35em;
+
   margin-bottom:15px;
 }
 
+
+/* 名前 */
+
 .member-panel h2{
   margin:0;
+
   font-size:42px;
+
   font-weight:400;
+
   letter-spacing:.1em;
 }
 
+
+/* LEAD */
+
 .member-role{
   margin:8px 0 28px !important;
+
   color:#2872da;
+
   font-size:12px !important;
+
   letter-spacing:.25em !important;
 }
 
@@ -397,11 +458,19 @@ h1{
 
 .member-slider{
   display:flex;
+
+  width:100%;
+
   overflow-x:auto;
+
   scroll-snap-type:x mandatory;
+
   scroll-behavior:smooth;
+
   gap:0;
+
   scrollbar-width:none;
+
   -webkit-overflow-scrolling:touch;
 }
 
@@ -409,17 +478,34 @@ h1{
   display:none;
 }
 
+
+/* 1枚ぶんのスライド */
+
 .member-slide{
   flex:0 0 100%;
+
+  width:100%;
+
   scroll-snap-align:start;
+
+  display:flex;
+  justify-content:center;
 }
+
+
+/* 写真 */
 
 .member-slide img{
   display:block;
-  width:min(420px, 100%);
+
+  width:min(420px,100%);
+
   height:auto;
+
   aspect-ratio:4 / 5;
+
   object-fit:cover;
+
   margin:0 auto;
 }
 
@@ -430,20 +516,29 @@ h1{
 
 .slider-dots{
   display:flex;
+
   justify-content:center;
   align-items:center;
+
   gap:9px;
+
   margin:15px 0 30px;
 }
 
 .slider-dots button{
   width:7px;
   height:7px;
+
   padding:0;
+
   border:1px solid #2872da;
+
   border-radius:50%;
+
   background:transparent;
+
   cursor:pointer;
+
   transition:all .25s ease;
 }
 
@@ -482,13 +577,17 @@ h1{
 
 .timeline{
   border-left:1px solid #ffffff77;
+
   padding-left:28px;
+
   max-width:700px;
 }
 
 .timeline p{
   border-bottom:1px solid #ffffff44;
+
   padding:17px 0;
+
   margin:0;
 }
 
@@ -508,16 +607,24 @@ h1{
 
 .live-card{
   max-width:720px;
+
   border:1px solid #86bde8;
+
   background:white;
+
   padding:45px;
-  box-shadow:0 18px 50px #0a5aa315;
+
+  box-shadow:
+    0 18px 50px #0a5aa315;
 }
 
 .live-card>div{
   display:flex;
+
   justify-content:space-between;
+
   border-bottom:1px solid #d7eaf6;
+
   padding:18px 0;
 }
 
@@ -532,10 +639,15 @@ h1{
 
 .button{
   display:inline-block;
+
   margin-top:30px;
+
   padding:15px 28px;
+
   background:var(--blue);
+
   color:white;
+
   letter-spacing:.12em;
 }
 
@@ -546,15 +658,20 @@ h1{
 
 footer{
   padding:50px;
+
   text-align:center;
+
   background:#073b8f;
+
   color:white;
 }
 
 footer img{
   width:90px;
   height:60px;
+
   object-fit:contain;
+
   border-radius:0;
 }
 
@@ -569,6 +686,7 @@ footer p{
 ========================= */
 
 @keyframes fadeIn{
+
   from{
     opacity:0;
   }
@@ -576,9 +694,11 @@ footer p{
   to{
     opacity:1;
   }
+
 }
 
 @keyframes panelUp{
+
   from{
     transform:translateY(100%);
     opacity:0;
@@ -588,6 +708,7 @@ footer p{
     transform:translateY(0);
     opacity:1;
   }
+
 }
 
 
@@ -596,6 +717,8 @@ footer p{
 ========================= */
 
 @media(max-width:760px){
+
+  /* NAV */
 
   .nav{
     height:65px;
@@ -609,7 +732,9 @@ footer p{
 
   .nav nav{
     gap:13px;
+
     font-size:8px;
+
     letter-spacing:.12em;
   }
 
@@ -618,11 +743,13 @@ footer p{
   }
 
 
-  /* スマホのメイン画像 */
+  /* HERO */
 
   .hero-photo{
     background-position:center center;
+
     background-size:contain;
+
     background-repeat:no-repeat;
   }
 
@@ -637,6 +764,7 @@ footer p{
   .hero-message{
     top:17vh;
     right:7vw;
+
     font-size:14px;
   }
 
@@ -645,7 +773,7 @@ footer p{
   }
 
 
-  /* セクション */
+  /* SECTION */
 
   .section{
     padding:90px 7vw;
@@ -660,7 +788,7 @@ footer p{
   }
 
 
-  /* MEMBER */
+  /* MEMBER GRID */
 
   .member-grid{
     grid-template-columns:repeat(2,1fr);
@@ -671,9 +799,8 @@ footer p{
     padding:18px;
   }
 
-  .member-card-text{
-    left:0;
-    bottom:0;
+  .member-card img{
+    object-position:center 35%;
   }
 
   .member-card-text span{
@@ -684,16 +811,15 @@ footer p{
     font-size:18px;
   }
 
-  .member-card img{
-    object-position:center 35%;
-  }
 
-
-  /* MEMBER DETAIL */
+  /* MEMBER MODAL */
 
   .member-panel{
-    padding:40px 7vw 45px;
+    width:100%;
+
     max-height:94svh;
+
+    padding:40px 7vw 45px;
   }
 
   .member-panel h2{
@@ -703,11 +829,19 @@ footer p{
   .member-close{
     top:15px;
     right:18px;
+
     font-size:32px;
   }
 
+
+  /* スマホでは写真を大きく */
+
   .member-slide img{
+    width:100%;
+
     aspect-ratio:4 / 5;
+
+    object-fit:cover;
   }
 
 
@@ -723,7 +857,25 @@ footer p{
 
   .live-card strong{
     display:block;
+
     margin-top:7px;
   }
+.member-card-text{
+  position:relative;
+  z-index:2;
+  writing-mode:horizontal-tb;
+  white-space:nowrap;
+}
 
+.member-card-text span{
+  display:block;
+  writing-mode:horizontal-tb;
+  white-space:nowrap;
+}
+
+.member-card-text strong{
+  display:block;
+  writing-mode:horizontal-tb;
+  white-space:nowrap;
+}
 }
