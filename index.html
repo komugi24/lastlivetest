@@ -7,11 +7,14 @@
   <meta name="description" content="歌風Cruise!! LAST LIVE 2027.03.27 日映文化ホール">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
   <header class="nav">
     <a class="brand" href="#home" aria-label="歌風Cruise!!">
       <img src="images/logo.jpg" alt="歌風Cruise!! ロゴ">
     </a>
+
     <nav>
       <a href="#home">HOME</a>
       <a href="#concept">CONCEPT</a>
@@ -20,173 +23,392 @@
       <a href="#guest">GUEST</a>
       <a href="#live">LIVE INFO</a>
     </nav>
+
     <a class="x-link" href="#" aria-label="X">𝕏</a>
   </header>
 
+
   <main>
+
+    <!-- HOME -->
     <section id="home" class="hero">
+
       <div class="hero-photo"></div>
       <div class="hero-wash"></div>
+
       <div class="hero-content">
         <p class="eyebrow">歌風Cruise!!</p>
         <h1>LAST LIVE</h1>
-        <div class="date">2027.03.27 <span>(Sat)</span></div>
-        <div class="venue">日映文化ホール</div>
+
+        <div class="date">
+          2027.03.27 <span>(Sat)</span>
+        </div>
+
+        <div class="venue">
+          日映文化ホール
+        </div>
       </div>
-      <p class="hero-message">歌う風のように――</p>
-      <div class="wave">〰〰〰〰〰〰〰〰〰〰〰〰</div>
-      <a class="scroll" href="#concept">SCROLL ↓</a>
+
+      <p class="hero-message">
+        歌う風のように――
+      </p>
+
+      <div class="wave">
+        〰〰〰〰〰〰〰〰〰〰〰〰
+      </div>
+
+      <a class="scroll" href="#concept">
+        SCROLL ↓
+      </a>
+
     </section>
 
+
+    <!-- CONCEPT -->
     <section id="concept" class="section concept">
-      <div class="section-label">CONCEPT</div>
+
+      <div class="section-label">
+        CONCEPT
+      </div>
+
       <div>
-        <h2>歌う風のように。</h2>
-        <p>6人で作ってきた、たくさんの歌。<br>
-        <p>最後の航海をぜひ見届けてください！</p>
+        <h2>
+          歌う風のように。
+        </h2>
+
+        <p>
+          6人で作ってきた、たくさんの歌。
+        </p>
+
+        <p>
+          最後の航海をぜひ見届けてください！
+        </p>
       </div>
+
     </section>
 
-   <section id="member" class="section">
-  <div class="section-label">MEMBER</div>
-  <h2>メンバー紹介</h2>
-  <p class="lead">みんなのかわいい写真がみられるよ</p>
 
-  <div class="member-grid">
+    <!-- MEMBER -->
+    <section id="member" class="section">
 
-    <!-- ファー -->
-   <button class="member-card" onclick="openMember()">
-  <img src="images/photo-69.jpg" alt="ファー">
-  <div class="member-card-overlay"></div>
-
-  <div class="member-card-text">
-    <span>MEMBER 01</span>
-    <strong>ファー</strong>
-  </div>
-</button>
-
-    <!-- まだ未登録 -->
-    <div class="member-card member-empty">
-      <span>MEMBER 02</span>
-    </div>
-
-    <div class="member-card member-empty">
-      <span>MEMBER 03</span>
-    </div>
-
-    <div class="member-card member-empty">
-      <span>MEMBER 04</span>
-    </div>
-
-    <div class="member-card member-empty">
-      <span>MEMBER 05</span>
-    </div>
-
-    <div class="member-card member-empty">
-      <span>MEMBER 06</span>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ファーの詳細タブ -->
-<div id="member-modal" class="member-modal">
-
-  <div class="member-overlay" onclick="closeMember()"></div>
-
-  <div class="member-panel">
-
-    <button class="member-close" onclick="closeMember()">×</button>
-
-    <div class="member-panel-label">MEMBER 01</div>
-
-    <h2>ファー</h2>
-
-    <p class="member-role">LEAD</p>
-
-    <!-- 写真スライダー -->
-    <div class="member-slider">
-
-      <div class="member-slide">
-        <img src="images/photo-69.jpg" alt="ファー 写真1">
+      <div class="section-label">
+        MEMBER
       </div>
 
-      <div class="member-slide">
-        <img src="images/photo-66.jpg" alt="ファー 写真2">
-      </div>
+      <h2>
+        メンバー紹介
+      </h2>
 
-      <div class="member-slide">
-        <img src="images/photo-72.jpg" alt="ファー 写真3">
-      </div>
-
-    </div>
-
-    <div class="slider-dots">
-      <span>●</span>
-      <span>○</span>
-      <span>○</span>
-    </div>
-
-    <div class="member-profile">
-      <p>
-        歌風Cruise!!のリードボーカル。
+      <p class="lead">
+        みんなのかわいい写真がみられるよ
       </p>
 
-      <p>
-        ここにファーの紹介文を入れられます。
-      </p>
+
+      <div class="member-grid">
+
+        <!-- ファー -->
+        <button class="member-card" onclick="openMember()">
+
+          <img src="images/photo-69.jpg" alt="ファー">
+
+          <div class="member-card-overlay"></div>
+
+          <div class="member-card-text">
+            <span>MEMBER 01</span>
+            <strong>ファー</strong>
+          </div>
+
+        </button>
+
+
+        <!-- まだ未登録 -->
+        <div class="member-card member-empty">
+          <span>MEMBER 02</span>
+        </div>
+
+        <div class="member-card member-empty">
+          <span>MEMBER 03</span>
+        </div>
+
+        <div class="member-card member-empty">
+          <span>MEMBER 04</span>
+        </div>
+
+        <div class="member-card member-empty">
+          <span>MEMBER 05</span>
+        </div>
+
+        <div class="member-card member-empty">
+          <span>MEMBER 06</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- MEMBER DETAIL -->
+    <div id="member-modal" class="member-modal">
+
+      <div class="member-overlay" onclick="closeMember()"></div>
+
+
+      <div class="member-panel">
+
+        <button class="member-close" onclick="closeMember()">
+          ×
+        </button>
+
+
+        <div class="member-panel-label">
+          MEMBER 01
+        </div>
+
+
+        <h2>
+          ファー
+        </h2>
+
+
+        <p class="member-role">
+          LEAD
+        </p>
+
+
+        <!-- PHOTO SLIDER -->
+        <div class="member-slider">
+
+          <div class="member-slide">
+            <img src="images/photo-69.jpg" alt="ファー 写真1">
+          </div>
+
+          <div class="member-slide">
+            <img src="images/photo-66.jpg" alt="ファー 写真2">
+          </div>
+
+          <div class="member-slide">
+            <img src="images/photo-72.jpg" alt="ファー 写真3">
+          </div>
+
+        </div>
+
+
+        <!-- SLIDER DOTS -->
+        <div class="slider-dots">
+
+          <button class="active" aria-label="写真1"></button>
+
+          <button aria-label="写真2"></button>
+
+          <button aria-label="写真3"></button>
+
+        </div>
+
+
+        <div class="member-profile">
+
+          <p>
+            歌風Cruise!!のリードボーカル。
+          </p>
+
+          <p>
+            ここにファーの紹介文を入れられます。
+          </p>
+
+        </div>
+
+      </div>
+
     </div>
 
-  </div>
-</div>
 
+    <!-- HISTORY -->
     <section id="history" class="section blue-section">
-      <div class="section-label">HISTORY</div>
-      <h2>これまでの航海。</h2>
+
+      <div class="section-label">
+        HISTORY
+      </div>
+
+      <h2>
+        これまでの航海。
+      </h2>
+
       <div class="timeline">
-        <p><span>2023年12月</span> 歌風Cruise!! 結成</p>
-        <p><span>2024年4月</span> 初ステージ</p>
-        <p><span>2025年8月</span> 金沢アカペラタウンコンクール＆ストリート出演</p>
-        <p><span>2026年1月</span> JP-act Winter Live出演
-        <p><span>2027</span> 最後のステージへ</p>
+
+        <p>
+          <span>2023年12月</span>
+          歌風Cruise!! 結成
+        </p>
+
+        <p>
+          <span>2024年4月</span>
+          初ステージ
+        </p>
+
+        <p>
+          <span>2025年8月</span>
+          金沢アカペラタウンコンクール＆ストリート出演
+        </p>
+
+        <p>
+          <span>2026年1月</span>
+          JP-act Winter Live出演
+        </p>
+
+        <p>
+          <span>2027</span>
+          最後のステージへ
+        </p>
+
       </div>
+
     </section>
 
+
+    <!-- GUEST -->
     <section id="guest" class="section guest">
-      <div class="section-label">GUEST</div>
-      <h2>仮<br><em>LAST LIVE</em></h2>
+
+      <div class="section-label">
+        GUEST
+      </div>
+
+      <h2>
+        仮<br>
+        <em>LAST LIVE</em>
+      </h2>
+
       <div class="guest">
-        
       </div>
+
     </section>
 
 
+    <!-- LIVE INFO -->
     <section id="live" class="section live">
-      <div class="section-label">LIVE INFO</div>
-      <h2>歌風Cruise!!<br><em>LAST LIVE</em></h2>
-      <div class="live-card">
-        <div><small>DATE</small><strong>2027.03.27 (Sat)</strong></div>
-        <div><small>VENUE</small><strong>日映文化ホール</strong></div>
-        <div><small>OPEN / START</small><strong>COMING SOON</strong></div>
-        <a class="button" href="#">チケット情報</a>
+
+      <div class="section-label">
+        LIVE INFO
       </div>
+
+      <h2>
+        歌風Cruise!!<br>
+        <em>LAST LIVE</em>
+      </h2>
+
+
+      <div class="live-card">
+
+        <div>
+          <small>DATE</small>
+          <strong>2027.03.27 (Sat)</strong>
+        </div>
+
+        <div>
+          <small>VENUE</small>
+          <strong>日映文化ホール</strong>
+        </div>
+
+        <div>
+          <small>OPEN / START</small>
+          <strong>COMING SOON</strong>
+        </div>
+
+        <a class="button" href="#">
+          チケット情報
+        </a>
+
+      </div>
+
     </section>
 
-  <footer>
-    <img src="images/logo.jpg" alt="歌風Cruise!!">
-    <p>© 歌風Cruise!!</p>
-  </footer>
-    <script>
-function openMember(){
-  document.getElementById("member-modal").classList.add("open");
-  document.body.style.overflow = "hidden";
-}
+  </main>
 
-function closeMember(){
-  document.getElementById("member-modal").classList.remove("open");
-  document.body.style.overflow = "";
-}
-</script>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <img src="images/logo.jpg" alt="歌風Cruise!!">
+
+    <p>
+      © 歌風Cruise!!
+    </p>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    /* メンバー詳細を開く */
+    function openMember(){
+
+      document
+        .getElementById("member-modal")
+        .classList.add("open");
+
+      document.body.style.overflow = "hidden";
+
+    }
+
+
+    /* メンバー詳細を閉じる */
+    function closeMember(){
+
+      document
+        .getElementById("member-modal")
+        .classList.remove("open");
+
+      document.body.style.overflow = "";
+
+    }
+
+
+    /* 写真スライダー */
+    const slider =
+      document.querySelector(".member-slider");
+
+    const dots =
+      document.querySelectorAll(".slider-dots button");
+
+
+    /* スワイプしたときに●を移動 */
+    slider.addEventListener("scroll", function(){
+
+      const index =
+        Math.round(
+          slider.scrollLeft / slider.clientWidth
+        );
+
+
+      dots.forEach(function(dot, i){
+
+        dot.classList.toggle(
+          "active",
+          i === index
+        );
+
+      });
+
+    });
+
+
+    /* ●をタップして写真を切り替える */
+    dots.forEach(function(dot, index){
+
+      dot.addEventListener("click", function(){
+
+        slider.scrollTo({
+          left: slider.clientWidth * index,
+          behavior: "smooth"
+        });
+
+      });
+
+    });
+
+  </script>
+
+
 </body>
 </html>
+これで変わるところ
