@@ -878,4 +878,18 @@ footer p{
   writing-mode:horizontal-tb;
   white-space:nowrap;
 }
+  @media(max-width:760px){
+
+  /* HISTORYの日付を途中で改行させない */
+  .timeline span{
+    display:block;
+    width:auto;
+    white-space:nowrap;
+    margin-bottom:8px;
+  }
+
+  /* 長い出来事の文章は日付の下から始める */
+  .timeline p{
+    line-height:1.8;
+  }
 }
