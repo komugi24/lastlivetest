@@ -416,9 +416,11 @@ h1{
 
 .member-slide img{
   display:block;
-  width:100%;
+  width:min(420px, 100%);
+  height:auto;
   aspect-ratio:4 / 5;
   object-fit:cover;
+  margin:0 auto;
 }
 
 
