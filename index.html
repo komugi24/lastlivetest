@@ -10,10 +10,12 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+  ========================= -->
+
   <header class="nav">
 
-    <!-- ロゴ -->
     <a class="brand" href="#home" aria-label="歌風Cruise!!">
       歌風Cruise!!
     </a>
@@ -34,7 +36,10 @@
 
   <main>
 
-    <!-- HOME -->
+    <!-- =========================
+         HOME
+    ========================= -->
+
     <section id="home" class="hero">
 
       <div class="hero-photo"></div>
@@ -54,7 +59,6 @@
           日映文化ホール
         </div>
 
-        <!-- 予約ボタン -->
         <a
           class="button hero-button"
           href="#"
@@ -66,11 +70,9 @@
 
       </div>
 
-
       <div class="wave">
         〰〰〰〰〰〰〰〰〰〰〰〰
       </div>
-
 
       <a class="scroll" href="#concept">
         SCROLL ↓
@@ -79,7 +81,10 @@
     </section>
 
 
-    <!-- CONCEPT -->
+    <!-- =========================
+         CONCEPT
+    ========================= -->
+
     <section id="concept" class="section concept">
 
       <div class="section-label">
@@ -105,7 +110,10 @@
     </section>
 
 
-    <!-- MEMBER -->
+    <!-- =========================
+         MEMBER
+    ========================= -->
+
     <section id="member" class="section">
 
       <div class="section-label">
@@ -117,16 +125,24 @@
       </h2>
 
       <p class="lead">
-        みんなのかわいい写真がみられるよ
+        それぞれの航海を振り返って。
       </p>
 
 
       <div class="member-grid">
 
-        <!-- ファー -->
-        <button class="member-card" onclick="openMember()">
 
-          <img src="images/photo-69.jpg" alt="ファー">
+        <!-- ===== ファー ===== -->
+
+        <button
+          class="member-card"
+          onclick="openMember(0)"
+        >
+
+          <img
+            src="images/far-1.jpg"
+            alt="ファー"
+          >
 
           <div class="member-card-overlay"></div>
 
@@ -138,10 +154,17 @@
         </button>
 
 
-        <!-- こむぎ -->
-        <button class="member-card" onclick="openMember()">
+        <!-- ===== こむぎ ===== -->
 
-          <img src="images/photo-76.jpg" alt="こむぎ">
+        <button
+          class="member-card"
+          onclick="openMember(1)"
+        >
+
+          <img
+            src="images/komugi-1.jpg"
+            alt="こむぎ"
+          >
 
           <div class="member-card-overlay"></div>
 
@@ -153,10 +176,17 @@
         </button>
 
 
-        <!-- クリストファー -->
-        <button class="member-card" onclick="openMember()">
+        <!-- ===== クリストファー ===== -->
 
-          <img src="images/photo-69.jpg" alt="クリストファー">
+        <button
+          class="member-card"
+          onclick="openMember(2)"
+        >
+
+          <img
+            src="images/christopher-1.jpg"
+            alt="クリストファー"
+          >
 
           <div class="member-card-overlay"></div>
 
@@ -168,10 +198,17 @@
         </button>
 
 
-        <!-- よじゅん -->
-        <button class="member-card" onclick="openMember()">
+        <!-- ===== よじゅん ===== -->
 
-          <img src="images/photo-69.jpg" alt="よじゅん">
+        <button
+          class="member-card"
+          onclick="openMember(3)"
+        >
+
+          <img
+            src="images/yojun-1.jpg"
+            alt="よじゅん"
+          >
 
           <div class="member-card-overlay"></div>
 
@@ -183,10 +220,17 @@
         </button>
 
 
-        <!-- タンタル -->
-        <button class="member-card" onclick="openMember()">
+        <!-- ===== タンタル ===== -->
 
-          <img src="images/photo-69.jpg" alt="タンタル">
+        <button
+          class="member-card"
+          onclick="openMember(4)"
+        >
+
+          <img
+            src="images/tantal-1.jpg"
+            alt="タンタル"
+          >
 
           <div class="member-card-overlay"></div>
 
@@ -198,10 +242,17 @@
         </button>
 
 
-        <!-- しゅがー -->
-        <button class="member-card" onclick="openMember()">
+        <!-- ===== しゅがー ===== -->
 
-          <img src="images/photo-69.jpg" alt="しゅがー">
+        <button
+          class="member-card"
+          onclick="openMember(5)"
+        >
+
+          <img
+            src="images/sugar-1.jpg"
+            alt="しゅがー"
+          >
 
           <div class="member-card-overlay"></div>
 
@@ -217,8 +268,14 @@
     </section>
 
 
-    <!-- MEMBER DETAIL -->
-    <div id="member-modal" class="member-modal">
+    <!-- =========================
+         MEMBER DETAIL MODAL
+    ========================= -->
+
+    <div
+      id="member-modal"
+      class="member-modal"
+    >
 
       <div
         class="member-overlay"
@@ -231,47 +288,58 @@
         <button
           class="member-close"
           onclick="closeMember()"
+          aria-label="閉じる"
         >
           ×
         </button>
 
 
-        <div class="member-panel-label">
+        <div
+          id="modal-member-number"
+          class="member-panel-label"
+        >
           MEMBER 01
         </div>
 
 
-        <h2>
+        <h2 id="modal-member-name">
           ファー
         </h2>
 
 
-        <p class="member-role">
+        <p
+          id="modal-member-role"
+          class="member-role"
+        >
           LEAD
         </p>
 
 
         <!-- PHOTO SLIDER -->
+
         <div class="member-slider">
 
           <div class="member-slide">
             <img
-              src="images/photo-69.jpg"
-              alt="ファー 写真1"
+              id="member-photo-1"
+              src="images/far-1.jpg"
+              alt="メンバー写真1"
             >
           </div>
 
           <div class="member-slide">
             <img
-              src="images/photo-66.jpg"
-              alt="ファー 写真2"
+              id="member-photo-2"
+              src="images/far-2.jpg"
+              alt="メンバー写真2"
             >
           </div>
 
           <div class="member-slide">
             <img
-              src="images/photo-72.jpg"
-              alt="ファー 写真3"
+              id="member-photo-3"
+              src="images/far-3.jpg"
+              alt="メンバー写真3"
             >
           </div>
 
@@ -279,6 +347,7 @@
 
 
         <!-- SLIDER DOTS -->
+
         <div class="slider-dots">
 
           <button
@@ -297,7 +366,12 @@
         </div>
 
 
-        <div class="member-profile">
+        <!-- PROFILE -->
+
+        <div
+          id="modal-member-profile"
+          class="member-profile"
+        >
 
           <p>
             Lead。歌風Cruise!!の発起人。そしてドライバー。
@@ -314,8 +388,14 @@
     </div>
 
 
-    <!-- HISTORY -->
-    <section id="history" class="section blue-section">
+    <!-- =========================
+         HISTORY
+    ========================= -->
+
+    <section
+      id="history"
+      class="section blue-section"
+    >
 
       <div class="section-label">
         HISTORY
@@ -358,8 +438,14 @@
     </section>
 
 
-    <!-- GUEST -->
-    <section id="guest" class="section guest">
+    <!-- =========================
+         GUEST
+    ========================= -->
+
+    <section
+      id="guest"
+      class="section guest"
+    >
 
       <div class="section-label">
         GUEST
@@ -372,14 +458,24 @@
       </h2>
 
       <div class="guest-content">
-        <!-- ゲスト情報をここに追加 -->
+
+        <!--
+          ゲスト情報をここに追加
+        -->
+
       </div>
 
     </section>
 
 
-    <!-- LIVE INFO -->
-    <section id="live" class="section live">
+    <!-- =========================
+         LIVE INFO
+    ========================= -->
+
+    <section
+      id="live"
+      class="section live"
+    >
 
       <div class="section-label">
         LIVE INFO
@@ -398,20 +494,16 @@
           <strong>2027.03.27 (Sat)</strong>
         </div>
 
-
         <div>
           <small>VENUE</small>
           <strong>日映文化ホール</strong>
         </div>
-
 
         <div>
           <small>OPEN / START</small>
           <strong>COMING SOON</strong>
         </div>
 
-
-        <!-- Googleフォーム -->
         <a
           class="button"
           href="#"
@@ -428,7 +520,10 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
   <footer>
 
     <a
@@ -447,18 +542,249 @@
   </footer>
 
 
-  <!-- JAVASCRIPT -->
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
   <script>
+
+    /* =========================
+       メンバーデータ
+    ========================= */
+
+    const members = [
+
+      {
+        number: "MEMBER 01",
+        name: "ファー",
+        role: "LEAD",
+
+        photos: [
+          "images/far-1.jpg",
+          "images/far-2.jpg",
+          "images/far-3.jpg"
+        ],
+
+        profile: `
+          <p>
+            Lead。歌風Cruise!!の発起人。そしてドライバー。
+          </p>
+
+          <p>
+            みんなの衣装もファー発案。
+          </p>
+        `
+      },
+
+
+      {
+        number: "MEMBER 02",
+        name: "こむぎ",
+        role: "MEMBER",
+
+        photos: [
+          "images/komugi-1.jpg",
+          "images/komugi-2.jpg",
+          "images/komugi-3.jpg"
+        ],
+
+        profile: `
+          <p>
+            ここにプロフィールを書いてね。
+          </p>
+
+          <p>
+            好きなことや思い出など。
+          </p>
+        `
+      },
+
+
+      {
+        number: "MEMBER 03",
+        name: "クリストファー",
+        role: "MEMBER",
+
+        photos: [
+          "images/christopher-1.jpg",
+          "images/christopher-2.jpg",
+          "images/christopher-3.jpg"
+        ],
+
+        profile: `
+          <p>
+            ここにプロフィールを書いてね。
+          </p>
+
+          <p>
+            好きなことや思い出など。
+          </p>
+        `
+      },
+
+
+      {
+        number: "MEMBER 04",
+        name: "よじゅん",
+        role: "MEMBER",
+
+        photos: [
+          "images/yojun-1.jpg",
+          "images/yojun-2.jpg",
+          "images/yojun-3.jpg"
+        ],
+
+        profile: `
+          <p>
+            ここにプロフィールを書いてね。
+          </p>
+
+          <p>
+            好きなことや思い出など。
+          </p>
+        `
+      },
+
+
+      {
+        number: "MEMBER 05",
+        name: "タンタル",
+        role: "MEMBER",
+
+        photos: [
+          "images/tantal-1.jpg",
+          "images/tantal-2.jpg",
+          "images/tantal-3.jpg"
+        ],
+
+        profile: `
+          <p>
+            ここにプロフィールを書いてね。
+          </p>
+
+          <p>
+            好きなことや思い出など。
+          </p>
+        `
+      },
+
+
+      {
+        number: "MEMBER 06",
+        name: "しゅがー",
+        role: "MEMBER",
+
+        photos: [
+          "images/sugar-1.jpg",
+          "images/sugar-2.jpg",
+          "images/sugar-3.jpg"
+        ],
+
+        profile: `
+          <p>
+            ここにプロフィールを書いてね。
+          </p>
+
+          <p>
+            好きなことや思い出など。
+          </p>
+        `
+      }
+
+    ];
+
 
     /* =========================
        メンバー詳細を開く
     ========================= */
 
-    function openMember(){
+    function openMember(index){
+
+      const member = members[index];
+
+      document.getElementById(
+        "modal-member-number"
+      ).textContent = member.number;
+
+
+      document.getElementById(
+        "modal-member-name"
+      ).textContent = member.name;
+
+
+      document.getElementById(
+        "modal-member-role"
+      ).textContent = member.role;
+
+
+      document.getElementById(
+        "modal-member-profile"
+      ).innerHTML = member.profile;
+
+
+      document.getElementById(
+        "member-photo-1"
+      ).src = member.photos[0];
+
+
+      document.getElementById(
+        "member-photo-2"
+      ).src = member.photos[1];
+
+
+      document.getElementById(
+        "member-photo-3"
+      ).src = member.photos[2];
+
+
+      document.getElementById(
+        "member-photo-1"
+      ).alt = member.name + " 写真1";
+
+
+      document.getElementById(
+        "member-photo-2"
+      ).alt = member.name + " 写真2";
+
+
+      document.getElementById(
+        "member-photo-3"
+      ).alt = member.name + " 写真3";
+
+
+      /* スライダーを最初に戻す */
+
+      const slider =
+        document.querySelector(".member-slider");
+
+      if(slider){
+
+        slider.scrollTo({
+          left: 0,
+          behavior: "instant"
+        });
+
+      }
+
+
+      /* ドットを最初に戻す */
+
+      document
+        .querySelectorAll(".slider-dots button")
+        .forEach(function(dot, i){
+
+          dot.classList.toggle(
+            "active",
+            i === 0
+          );
+
+        });
+
 
       document
         .getElementById("member-modal")
         .classList.add("open");
+
 
       document.body.style.overflow = "hidden";
 
@@ -481,58 +807,90 @@
 
 
     /* =========================
+       ESCキーで閉じる
+    ========================= */
+
+    document.addEventListener(
+      "keydown",
+      function(event){
+
+        if(event.key === "Escape"){
+
+          closeMember();
+
+        }
+
+      }
+    );
+
+
+    /* =========================
        写真スライダー
     ========================= */
 
     const slider =
       document.querySelector(".member-slider");
 
+
     const dots =
-      document.querySelectorAll(".slider-dots button");
+      document.querySelectorAll(
+        ".slider-dots button"
+      );
 
 
-    if (slider) {
+    if(slider){
 
-      /* スワイプしたときに●を移動 */
+      /* スワイプしたとき */
 
-      slider.addEventListener("scroll", function(){
+      slider.addEventListener(
+        "scroll",
+        function(){
 
-        const index =
-          Math.round(
-            slider.scrollLeft / slider.clientWidth
+          const index =
+            Math.round(
+              slider.scrollLeft /
+              slider.clientWidth
+            );
+
+
+          dots.forEach(
+            function(dot, i){
+
+              dot.classList.toggle(
+                "active",
+                i === index
+              );
+
+            }
           );
 
+        }
+      );
 
-        dots.forEach(function(dot, i){
 
-          dot.classList.toggle(
-            "active",
-            i === index
+      /* ●をタップ */
+
+      dots.forEach(
+        function(dot, index){
+
+          dot.addEventListener(
+            "click",
+            function(){
+
+              slider.scrollTo({
+
+                left:
+                  slider.clientWidth * index,
+
+                behavior: "smooth"
+
+              });
+
+            }
           );
 
-        });
-
-      });
-
-
-      /* ●をタップして写真を切り替える */
-
-      dots.forEach(function(dot, index){
-
-        dot.addEventListener("click", function(){
-
-          slider.scrollTo({
-
-            left:
-              slider.clientWidth * index,
-
-            behavior: "smooth"
-
-          });
-
-        });
-
-      });
+        }
+      );
 
     }
 
@@ -541,4 +899,3 @@
 
 </body>
 </html>
-
