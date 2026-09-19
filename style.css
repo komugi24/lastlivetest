@@ -1,1226 +1,1296 @@
-/* ========================================
-   基本
-======================================== */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&display=swap');
 
-* {
-  box-sizing: border-box;
+:root{
+  --blue:#0d5bd7;
+  --sky:#bfe8f5;
+  --ink:#073b8f;
+  --white:#fff;
 }
 
-html {
-  scroll-behavior: smooth;
+*{
+  box-sizing:border-box;
 }
 
-body {
-  margin: 0;
-  font-family:
-    "Noto Serif JP",
-    "Yu Mincho",
-    "Hiragino Mincho ProN",
-    serif;
-  color: #073b8f;
-  background: #f7fcff;
+html{
+  scroll-behavior:smooth;
 }
 
-a {
-  color: inherit;
+body{
+  margin:0;
+  color:var(--ink);
+  font-family:"Noto Serif JP",serif;
+  background:#f8fdff;
 }
 
-button {
-  font: inherit;
-}
-
-
-/* ========================================
-   NAVIGATION
-======================================== */
-
-.nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 20;
-
-  width: 100%;
-  padding: 22px 28px;
-
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-
-  color: #fff;
-}
-
-.brand {
-  width: 150px;
-
-  font-size: 25px;
-  line-height: 1.1;
-  letter-spacing: 0.03em;
-
-  text-decoration: none;
-}
-
-.nav nav {
-  display: flex;
-  align-items: center;
-  gap: 34px;
-
-  margin-top: 5px;
-}
-
-.nav nav a {
-  color: #fff;
-  font-size: 17px;
-  letter-spacing: 0.13em;
-  text-decoration: none;
-
-  text-shadow: 0 1px 7px rgba(0, 60, 100, 0.25);
-
-  transition: opacity 0.2s ease;
-}
-
-.nav nav a:hover {
-  opacity: 0.7;
-}
-
-.x-link {
-  color: #fff;
-  font-size: 34px;
-  line-height: 1;
-
-  text-decoration: none;
+a{
+  color:inherit;
+  text-decoration:none;
 }
 
 
-/* ========================================
+/* =========================
+   NAV
+========================= */
+
+.nav{
+  position:fixed;
+  z-index:20;
+  top:0;
+  left:0;
+  right:0;
+  height:82px;
+
+  display:flex;
+  align-items:center;
+
+  padding:0;
+
+  color:white;
+
+  background:linear-gradient(
+    #0574cf66,
+    transparent
+  );
+
+  backdrop-filter:blur(2px);
+}
+
+.brand img{
+  width:78px;
+  height:52px;
+
+  object-fit:contain;
+  object-position:center;
+
+  border-radius:0;
+}
+
+.nav nav{
+  display:flex;
+  gap:3.2vw;
+  margin:auto;
+
+  font-size:12px;
+  letter-spacing:.25em;
+}
+
+.nav nav a{
+  padding:10px 0;
+  border-bottom:1px solid transparent;
+}
+
+.nav nav a:hover{
+  border-bottom-color:white;
+}
+
+.x-link{
+  font-size:23px;
+}
+
+
+/* =========================
    HERO
-======================================== */
+========================= */
 
-.hero {
-  position: relative;
-  min-height: 100vh;
+.hero{
+  min-height:100svh;
 
-  overflow: hidden;
+  position:relative;
+  overflow:hidden;
 
-  color: #fff;
-  background: #cceafa;
+  color:white;
+
+  display:flex;
+  align-items:flex-end;
 }
 
-/*
-  ★ここだけ確認！
-  実際のメイン写真のファイル名に変更する
-*/
-.hero-photo {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+.hero-photo{
+  position:absolute;
+  inset:0;
 
-  background-image: url("images/hero.jpg");
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
+  background:
+    url("images/main.jpg")
+    center center /
+    cover
+    no-repeat;
 }
 
 
 /*
   上が濃い青
   ↓
-  少しずつ薄くなる
+  下に向かって少しずつ薄く
   ↓
-  メンバー付近ではかなり透明
+  メンバーのところでは写真を見せる
 */
-.hero-wash {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+
+.hero-wash{
+  position:absolute;
+  inset:0;
 
   background:
     linear-gradient(
       to bottom,
-      rgba(35, 125, 195, 0.82) 0%,
-      rgba(45, 135, 200, 0.68) 14%,
-      rgba(75, 160, 215, 0.48) 28%,
-      rgba(130, 195, 230, 0.25) 45%,
-      rgba(205, 232, 247, 0.08) 62%,
-      rgba(205, 232, 247, 0) 76%
+      rgba(5,116,207,.72) 0%,
+      rgba(25,135,210,.55) 18%,
+      rgba(80,165,220,.32) 38%,
+      rgba(180,215,238,.12) 58%,
+      rgba(255,255,255,0) 75%
+    ),
+    linear-gradient(
+      90deg,
+      #0a62c422,
+      #ffffff00 55%
     );
 }
 
 
-.hero-content {
-  position: absolute;
-  z-index: 5;
+.hero-content{
+  position:relative;
+  z-index:2;
 
-  left: 7%;
-  top: 18%;
-
-  color: #fff;
+  padding:0 6vw 11vh;
 
   text-shadow:
-    0 2px 8px rgba(0, 60, 110, 0.35),
-    0 0 18px rgba(0, 60, 110, 0.18);
+    0 2px 15px #0750a455;
 }
 
+.eyebrow{
+  font-size:clamp(25px,4vw,58px);
 
-.hero-content .eyebrow {
-  margin: 0 0 22px;
+  letter-spacing:.06em;
 
-  font-size: clamp(22px, 2.2vw, 36px);
-  line-height: 1.2;
-  letter-spacing: 0.06em;
+  margin:0 0 12px;
 }
 
+h1{
+  font-size:clamp(52px,9vw,128px);
 
-.hero-content h1 {
-  margin: 0;
+  letter-spacing:.18em;
 
-  font-size: clamp(72px, 9vw, 150px);
-  line-height: 0.9;
-  font-weight: 400;
+  margin:0 0 12px;
 
-  letter-spacing: 0.12em;
+  font-weight:400;
 }
 
+.date{
+  font-size:clamp(24px,3vw,44px);
 
-.hero-content .date {
-  margin-top: 42px;
-
-  font-size: clamp(24px, 3vw, 46px);
-  line-height: 1.2;
-
-  letter-spacing: 0.1em;
+  letter-spacing:.12em;
 }
 
-
-.hero-content .date span {
-  font-size: 0.55em;
-}
-
-
-.hero-content .venue {
-  display: inline-block;
-
-  margin-top: 12px;
-
-  font-size: clamp(20px, 2.3vw, 34px);
-  line-height: 1.3;
-
-  letter-spacing: 0.12em;
-}
-
-
-/* ========================================
-   予約ボタン
-======================================== */
-
-/*
-  透明＋白い細枠
-  背景がうっすら透ける
-*/
-
-.hero-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  margin-top: 0;
-  margin-left: 42px;
-
-  min-width: 190px;
-
-  padding: 13px 34px;
-
-  border: 2px solid rgba(255, 255, 255, 0.95);
-  border-radius: 999px;
-
-  color: #fff !important;
-
-  /* 透明感 */
-  background: rgba(255, 255, 255, 0.08) !important;
-
-  font-size: 18px;
-  line-height: 1;
-
-  letter-spacing: 0.12em;
-  text-decoration: none;
-
-  text-shadow: 0 1px 5px rgba(0, 60, 100, 0.25);
-
-  /* 背景を少しだけぼかす */
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-
-  transition:
-    background 0.25s ease,
-    transform 0.25s ease;
-}
-
-
-.hero-button::after {
-  content: "→";
-
-  margin-left: 18px;
-
-  font-size: 22px;
-  line-height: 1;
-}
-
-
-.hero-button:hover {
-  background: rgba(255, 255, 255, 0.2) !important;
-
-  transform: translateY(-2px);
-}
-
-
-/* ========================================
-   波
-======================================== */
-
-.wave {
-  position: absolute;
-  z-index: 6;
-
-  bottom: 5%;
-  left: 0;
-
-  width: 100%;
-
-  text-align: center;
-
-  color: #fff;
-
-  font-size: 20px;
-  letter-spacing: 0.15em;
-
-  opacity: 0.9;
-}
-
-
-.scroll {
-  position: absolute;
-  z-index: 6;
-
-  right: 7%;
-  bottom: 5%;
-
-  color: #fff;
-
-  font-size: 13px;
-  letter-spacing: 0.18em;
-
-  text-decoration: none;
-
-  writing-mode: vertical-rl;
-
-  text-shadow: 0 1px 6px rgba(0, 60, 100, 0.25);
-}
-
-
-/* ========================================
-   共通 SECTION
-======================================== */
-
-.section {
-  padding: 110px 8%;
-
-  background: #f7fcff;
-}
-
-.section-label {
-  margin-bottom: 35px;
-
-  color: #2e6fae;
-
-  font-size: 17px;
-  letter-spacing: 0.25em;
-}
-
-.section h2 {
-  margin: 0 0 30px;
-
-  color: #073b8f;
-
-  font-size: clamp(40px, 5vw, 72px);
-  font-weight: 400;
-  line-height: 1.25;
-}
-
-.lead {
-  margin-bottom: 60px;
-
-  color: #164f8e;
-
-  font-size: 22px;
-  letter-spacing: 0.08em;
-}
-
-
-/* ========================================
-   CONCEPT
-======================================== */
-
-.concept {
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 50px;
-}
-
-.concept h2 {
-  margin-bottom: 25px;
-}
-
-.concept p {
-  margin: 8px 0;
-
-  font-size: 20px;
-  line-height: 2;
-}
-
-
-/* ========================================
-   MEMBER
-======================================== */
-
-#member {
-  padding-top: 120px;
+.date span{
+  font-size:.48em;
 }
 
 
 /*
-  6人を2列で表示
+  予約ボタンを横に置けるようにする
 */
-.member-grid {
-  display: grid;
 
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.venue{
+  display:inline-block;
 
-  gap: 4px;
+  font-size:20px;
 
-  max-width: 1100px;
+  letter-spacing:.25em;
+
+  margin-top:7px;
 }
 
 
-/*
-  カード
-*/
-.member-card {
-  position: relative;
+/* =========================
+   HERO 予約ボタン
+========================= */
 
-  width: 100%;
-  aspect-ratio: 1.55 / 1;
+.hero-button{
+  display:inline-flex;
 
-  padding: 0;
+  align-items:center;
+  justify-content:center;
 
-  overflow: hidden;
+  margin-top:0;
+  margin-left:32px;
 
-  border: 0;
+  padding:12px 30px;
 
-  background: #dceef7;
+  border:1.5px solid rgba(255,255,255,.95);
+  border-radius:999px;
 
-  cursor: pointer;
-
-  color: #fff;
-}
-
-
-/*
-  カード内の画像
-*/
-.member-card img {
-  display: block;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
+  color:white !important;
 
   /*
-    基本位置。
-    人によって顔の位置が違う場合は
-    下の nth-child で微調整できる。
+    中は透明に近くして
+    後ろの写真・青を透けさせる
   */
-  object-position: center 28%;
+  background:rgba(255,255,255,.08) !important;
 
-  transition: transform 0.4s ease;
+  letter-spacing:.12em;
+
+  text-shadow:
+    0 1px 6px rgba(0,50,100,.3);
+
+  backdrop-filter:blur(3px);
+  -webkit-backdrop-filter:blur(3px);
+
+  transition:
+    background .25s ease,
+    transform .25s ease;
+}
+
+.hero-button::after{
+  content:"→";
+
+  margin-left:18px;
+
+  font-size:20px;
+}
+
+.hero-button:hover{
+  background:rgba(255,255,255,.18) !important;
+
+  transform:translateY(-2px);
 }
 
 
-.member-card:hover img {
-  transform: scale(1.03);
+/* =========================
+   HERO MESSAGE
+========================= */
+
+.hero-message{
+  position:absolute;
+  z-index:2;
+
+  right:7vw;
+  top:25vh;
+
+  font-size:clamp(17px,2vw,27px);
+
+  line-height:2.2;
+
+  letter-spacing:.2em;
+}
+
+.wave{
+  position:absolute;
+  z-index:2;
+
+  bottom:0;
+  left:-2%;
+
+  width:104%;
+
+  font-size:52px;
+
+  letter-spacing:-.18em;
+
+  transform:rotate(-1deg);
+
+  opacity:.95;
+}
+
+.scroll{
+  position:absolute;
+  z-index:3;
+
+  right:3vw;
+  bottom:8vh;
+
+  writing-mode:vertical-rl;
+
+  letter-spacing:.25em;
+
+  font-size:11px;
 }
 
 
-/*
-  写真の下側をほんの少し暗くして
-  白文字を見やすくする
-*/
-.member-card::after {
-  content: "";
+/* =========================
+   SECTION
+========================= */
 
-  position: absolute;
-  inset: 42% 0 0;
+.section{
+  padding:130px 10vw;
 
-  z-index: 1;
+  min-height:70vh;
+}
+
+.section-label{
+  font-size:11px;
+
+  letter-spacing:.35em;
+
+  margin-bottom:28px;
+
+  color:#2872da;
+}
+
+.section h2{
+  font-size:clamp(35px,5vw,68px);
+
+  font-weight:400;
+
+  line-height:1.45;
+
+  margin:0 0 35px;
+}
+
+.section p{
+  font-size:17px;
+
+  line-height:2.1;
+
+  letter-spacing:.08em;
+}
+
+
+/* =========================
+   CONCEPT
+========================= */
+
+.concept{
+  display:grid;
+
+  grid-template-columns:
+    1fr 1.5fr;
+
+  gap:7vw;
 
   background:
     linear-gradient(
-      to bottom,
-      rgba(0, 60, 100, 0),
-      rgba(0, 60, 100, 0.38)
+      135deg,
+      #f8fdff,
+      #dff6ff
+    );
+}
+
+
+/* =========================
+   MEMBER
+========================= */
+
+.member-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:2px;
+
+  margin-top:50px;
+}
+
+
+/* =========================
+   メンバーカード
+========================= */
+
+.member-card{
+  position:relative;
+
+  overflow:hidden;
+
+  width:100%;
+
+  min-height:160px;
+
+  padding:20px;
+
+  display:flex;
+
+  align-items:flex-end;
+
+  border:none;
+
+  border-radius:0;
+
+  background:#d7effa;
+
+  color:white;
+
+  font-family:inherit;
+
+  text-align:left;
+
+  cursor:pointer;
+}
+
+
+/* =========================
+   カード写真
+========================= */
+
+.member-card img{
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  display:block;
+
+  object-fit:cover;
+
+  object-position:center 35%;
+
+  z-index:0;
+
+  transform:scale(1);
+
+  transform-origin:center center;
+}
+
+
+/*
+  ここだけ6人それぞれ調整。
+
+  レイアウトは変えず、
+  写真の中身だけ動かしている。
+*/
+
+
+/* ファー */
+.member-card:nth-child(1) img{
+  object-position:center 28%;
+  transform:scale(1.02);
+}
+
+
+/* こむぎ */
+.member-card:nth-child(2) img{
+  object-position:center 30%;
+  transform:scale(1.02);
+}
+
+
+/* クリストファー */
+.member-card:nth-child(3) img{
+  object-position:center 27%;
+  transform:scale(1.03);
+}
+
+
+/* よじゅん */
+.member-card:nth-child(4) img{
+  object-position:center 27%;
+  transform:scale(1.03);
+}
+
+
+/* タンタル */
+.member-card:nth-child(5) img{
+  object-position:center 29%;
+  transform:scale(1.03);
+}
+
+
+/* しゅがー */
+.member-card:nth-child(6) img{
+  object-position:center 25%;
+  transform:scale(1.03);
+}
+
+
+/* =========================
+   カード写真の青フィルター
+========================= */
+
+.member-card-overlay{
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  background:
+    linear-gradient(
+      transparent 35%,
+      rgba(7,59,143,.15)
     );
 
-  pointer-events: none;
+  z-index:1;
 }
 
 
-/*
-  文字
-  HTML側のクラス名が
-  member-card-text / card-text の
-  どちらでも効くようにしてある
-*/
-.member-card .member-card-text,
-.member-card .card-text {
-  position: absolute;
+/* =========================
+   カード文字
+========================= */
 
-  left: 28px;
-  bottom: 24px;
+.member-card-text{
+  position:absolute;
 
-  z-index: 3;
+  left:20px;
+  bottom:18px;
 
-  color: #fff;
+  z-index:2;
 
-  text-align: left;
+  writing-mode:horizontal-tb;
 
-  text-shadow: 0 2px 8px rgba(0, 40, 80, 0.35);
+  white-space:nowrap;
+
+  text-align:left;
+
+  text-shadow:
+    0 2px 8px rgba(0,0,0,.45);
+}
+
+.member-card-text span{
+  display:block;
+
+  font-size:12px;
+
+  letter-spacing:.15em;
+
+  writing-mode:horizontal-tb;
+
+  white-space:nowrap;
+}
+
+.member-card-text strong{
+  display:block;
+
+  margin-top:8px;
+
+  font-size:22px;
+
+  font-weight:400;
+
+  letter-spacing:.12em;
+
+  writing-mode:horizontal-tb;
+
+  white-space:nowrap;
 }
 
 
-.member-card .member-card-text span,
-.member-card .card-text span {
-  display: block;
+/* =========================
+   未登録メンバー
+========================= */
 
-  margin-bottom: 8px;
+.member-empty{
+  cursor:default;
 
-  font-size: 15px;
+  color:var(--ink);
 
-  letter-spacing: 0.18em;
+  background:#d7effa;
+}
+
+.member-empty:hover{
+  background:#d7effa;
 }
 
 
-.member-card .member-card-text strong,
-.member-card .card-text strong {
-  display: block;
-
-  font-size: clamp(25px, 3vw, 40px);
-  font-weight: 400;
-
-  letter-spacing: 0.08em;
-}
-
-
-/*
-  もしHTMLが文字をdivで直接入れている場合にも対応
-*/
-.member-card > div:not(.member-overlay) {
-  position: relative;
-}
-
-
-/* ========================================
-   メンバー写真ごとの顔位置調整
-======================================== */
-
-/*
-  ここは実際に見ながら微調整する場所。
-  「顔を少し上にしたい」なら数字を小さく、
-  「顔を少し下にしたい」なら数字を大きくする。
-*/
-
-.member-card:nth-child(1) img {
-  object-position: center 22%;
-}
-
-.member-card:nth-child(2) img {
-  object-position: center 25%;
-}
-
-.member-card:nth-child(3) img {
-  object-position: center 22%;
-}
-
-.member-card:nth-child(4) img {
-  object-position: center 22%;
-}
-
-.member-card:nth-child(5) img {
-  object-position: center 22%;
-}
-
-.member-card:nth-child(6) img {
-  object-position: center 20%;
-}
-
-
-/* ========================================
+/* =========================
    MEMBER MODAL
-======================================== */
+========================= */
 
-.member-modal {
-  position: fixed;
+.member-modal{
+  position:fixed;
 
-  inset: 0;
+  inset:0;
 
-  z-index: 100;
+  z-index:100;
 
-  display: none;
+  display:none;
 
-  align-items: center;
-  justify-content: center;
+  align-items:flex-end;
+
+  justify-content:center;
+}
+
+.member-modal.open{
+  display:flex;
 }
 
 
-.member-modal.open {
-  display: flex;
-}
+/* 背景 */
 
+.member-overlay{
+  position:absolute;
 
-.member-overlay {
-  position: absolute;
+  inset:0;
 
-  inset: 0;
-
-  background: rgba(0, 40, 80, 0.55);
-
-  backdrop-filter: blur(4px);
-}
-
-
-.member-panel {
-  position: relative;
-  z-index: 2;
-
-  width: min(900px, 90vw);
-  max-height: 90vh;
-
-  overflow-y: auto;
-
-  padding: 50px;
-
-  background: #f7fcff;
-
-  color: #073b8f;
-
-  box-shadow: 0 20px 60px rgba(0, 40, 80, 0.2);
-}
-
-
-.member-close {
-  position: absolute;
-
-  top: 15px;
-  right: 20px;
-
-  z-index: 5;
-
-  width: 44px;
-  height: 44px;
-
-  border: 0;
-
-  background: transparent;
-
-  color: #073b8f;
-
-  font-size: 32px;
-
-  cursor: pointer;
-}
-
-
-.member-panel-label {
-  margin-bottom: 10px;
-
-  color: #2e6fae;
-
-  font-size: 14px;
-
-  letter-spacing: 0.2em;
-}
-
-
-.member-panel h2 {
-  margin: 0 0 8px;
-
-  font-size: 42px;
-  font-weight: 400;
-}
-
-
-.member-role {
-  margin: 0 0 30px;
-
-  color: #5d8db7;
-
-  font-size: 14px;
-
-  letter-spacing: 0.2em;
-}
-
-
-/* ========================================
-   MEMBER SLIDER
-======================================== */
-
-.member-slider {
-  display: flex;
-
-  width: 100%;
-
-  overflow-x: auto;
-
-  scroll-snap-type: x mandatory;
-
-  scrollbar-width: none;
-
-  -webkit-overflow-scrolling: touch;
-}
-
-
-.member-slider::-webkit-scrollbar {
-  display: none;
-}
-
-
-.member-slide {
-  flex: 0 0 100%;
-
-  aspect-ratio: 4 / 3;
-
-  scroll-snap-align: start;
-
-  overflow: hidden;
-}
-
-
-.member-slide img {
-  display: block;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-}
-
-
-/* ========================================
-   SLIDER DOTS
-======================================== */
-
-.slider-dots {
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-
-  gap: 9px;
-
-  margin: 20px 0 30px;
-}
-
-
-.slider-dots button {
-  width: 8px;
-  height: 8px;
-
-  padding: 0;
-
-  border: 0;
-  border-radius: 50%;
-
-  background: #b7d4e8;
-
-  cursor: pointer;
-}
-
-
-.slider-dots button.active {
-  background: #1761a5;
-}
-
-
-/* ========================================
-   MEMBER PROFILE
-======================================== */
-
-.member-profile {
-  color: #234f78;
-
-  font-size: 16px;
-
-  line-height: 2;
-}
-
-
-/* ========================================
-   HISTORY
-======================================== */
-
-.blue-section {
   background:
-    linear-gradient(
-      180deg,
-      #e2f2fb 0%,
-      #c9e7f6 100%
-    );
+    rgba(7,59,143,.22);
+
+  backdrop-filter:blur(3px);
+
+  animation:
+    fadeIn .35s ease;
 }
 
 
-.timeline {
-  max-width: 900px;
+/* 詳細パネル */
+
+.member-panel{
+  position:relative;
+
+  z-index:2;
+
+  width:min(760px,100%);
+
+  max-height:92svh;
+
+  overflow-y:auto;
+
+  background:
+    rgba(255,255,255,.96);
+
+  padding:45px 7vw 60px;
+
+  box-shadow:
+    0 -15px 60px
+    rgba(7,59,143,.18);
+
+  animation:
+    panelUp .45s ease;
 }
 
 
-.timeline p {
-  display: grid;
+/* 閉じる */
 
-  grid-template-columns: 160px 1fr;
+.member-close{
+  position:absolute;
 
-  gap: 30px;
+  top:18px;
+  right:22px;
 
-  margin: 0;
+  border:none;
 
-  padding: 20px 0;
+  background:none;
 
-  border-bottom: 1px solid rgba(7, 59, 143, 0.15);
+  color:var(--ink);
 
-  font-size: 18px;
+  font-size:35px;
 
-  line-height: 1.7;
+  font-weight:200;
+
+  line-height:1;
+
+  cursor:pointer;
 }
 
 
-.timeline span {
-  font-weight: 600;
+/* MEMBER 01 */
 
-  white-space: nowrap;
+.member-panel-label{
+  color:#2872da;
+
+  font-size:11px;
+
+  letter-spacing:.35em;
+
+  margin-bottom:15px;
+}
+
+.member-panel h2{
+  margin:0;
+
+  font-size:42px;
+
+  font-weight:400;
+
+  letter-spacing:.1em;
+}
+
+.member-role{
+  margin:
+    8px 0 28px
+    !important;
+
+  color:#2872da;
+
+  font-size:12px
+    !important;
+
+  letter-spacing:.25em
+    !important;
 }
 
 
-/* ========================================
-   GUEST
-======================================== */
+/* =========================
+   PHOTO SLIDER
+========================= */
 
-.guest {
-  min-height: 500px;
+.member-slider{
+  display:flex;
+
+  width:100%;
+
+  overflow-x:auto;
+
+  scroll-snap-type:
+    x mandatory;
+
+  scroll-behavior:smooth;
+
+  gap:0;
+
+  scrollbar-width:none;
+
+  -webkit-overflow-scrolling:touch;
+}
+
+.member-slider::-webkit-scrollbar{
+  display:none;
 }
 
 
-.guest h2 em,
-.live h2 em {
-  font-style: normal;
+/* 1枚ぶん */
 
-  color: #2e6fae;
+.member-slide{
+  flex:
+    0 0 100%;
+
+  width:100%;
+
+  scroll-snap-align:start;
+
+  display:flex;
+
+  justify-content:center;
 }
 
 
-/* ========================================
-   LIVE INFO
-======================================== */
+/* PCの写真 */
 
-.live {
-  background: #e5f4fb;
+.member-slide img{
+  display:block;
+
+  width:min(420px,100%);
+
+  height:auto;
+
+  aspect-ratio:4 / 5;
+
+  object-fit:cover;
+
+  margin:0 auto;
 }
 
 
-.live-card {
-  max-width: 700px;
+/* =========================
+   SLIDER DOTS
+========================= */
 
-  padding: 45px;
+.slider-dots{
+  display:flex;
 
-  background: rgba(255, 255, 255, 0.6);
+  justify-content:center;
 
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  align-items:center;
+
+  gap:9px;
+
+  margin:
+    15px 0 30px;
+}
+
+.slider-dots button{
+  width:7px;
+
+  height:7px;
+
+  padding:0;
+
+  border:
+    1px solid #2872da;
+
+  border-radius:50%;
+
+  background:transparent;
+
+  cursor:pointer;
+
+  transition:
+    all .25s ease;
+}
+
+.slider-dots button.active{
+  background:#2872da;
 }
 
 
-.live-card > div {
-  margin-bottom: 25px;
+/* =========================
+   PROFILE
+========================= */
+
+.member-profile{
+  max-width:600px;
+
+  margin:auto;
+}
+
+.member-profile p{
+  font-size:15px;
+
+  line-height:2;
 }
 
 
-.live-card small {
-  display: block;
+/* =========================
+   HISTORY
+========================= */
 
-  margin-bottom: 7px;
+.blue-section{
+  background:var(--blue);
 
-  color: #4d83ad;
+  color:white;
+}
 
-  font-size: 12px;
+.blue-section .section-label{
+  color:white;
+}
 
-  letter-spacing: 0.2em;
+.timeline{
+  border-left:
+    1px solid #ffffff77;
+
+  padding-left:28px;
+
+  max-width:700px;
+}
+
+.timeline p{
+  border-bottom:
+    1px solid #ffffff44;
+
+  padding:17px 0;
+
+  margin:0;
+}
+
+.timeline span{
+  display:inline-block;
+
+  width:100px;
+
+  white-space:nowrap;
 }
 
 
-.live-card strong {
-  display: block;
+/* =========================
+   LIVE
+========================= */
 
-  color: #073b8f;
+.live{
+  background:#eefaff;
+}
 
-  font-size: 22px;
+.live-card{
+  max-width:720px;
 
-  font-weight: 400;
+  border:
+    1px solid #86bde8;
+
+  background:white;
+
+  padding:45px;
+
+  box-shadow:
+    0 18px 50px
+    #0a5aa315;
+}
+
+.live-card>div{
+  display:flex;
+
+  justify-content:space-between;
+
+  border-bottom:
+    1px solid #d7eaf6;
+
+  padding:18px 0;
+}
+
+.live-card small{
+  letter-spacing:.2em;
+}
+
+.live-card strong{
+  font-size:18px;
+
+  font-weight:400;
+}
+
+.button{
+  display:inline-block;
+
+  margin-top:30px;
+
+  padding:15px 28px;
+
+  background:var(--blue);
+
+  color:white;
+
+  letter-spacing:.12em;
 }
 
 
-/* LIVE INFOの予約ボタン */
-
-.live-card .button {
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  padding: 13px 35px;
-
-  border: 2px solid #1761a5;
-
-  border-radius: 999px;
-
-  color: #1761a5;
-
-  background: transparent;
-
-  text-decoration: none;
-
-  letter-spacing: 0.1em;
-
-  transition: 0.25s ease;
-}
-
-
-.live-card .button:hover {
-  color: #fff;
-
-  background: #1761a5;
-}
-
-
-/* ========================================
+/* =========================
    FOOTER
-======================================== */
+========================= */
 
-footer {
-  padding: 50px 8%;
+footer{
+  padding:50px;
 
-  background: #073b8f;
+  text-align:center;
 
-  color: #fff;
+  background:#073b8f;
 
-  text-align: center;
+  color:white;
+}
+
+footer img{
+  width:90px;
+  height:60px;
+
+  object-fit:contain;
+
+  border-radius:0;
+}
+
+footer p{
+  font-size:11px;
+
+  letter-spacing:.15em;
 }
 
 
-.footer-x {
-  text-decoration: none;
+/* =========================
+   ANIMATION
+========================= */
 
-  letter-spacing: 0.08em;
+@keyframes fadeIn{
+
+  from{
+    opacity:0;
+  }
+
+  to{
+    opacity:1;
+  }
+
+}
+
+@keyframes panelUp{
+
+  from{
+    transform:translateY(100%);
+    opacity:0;
+  }
+
+  to{
+    transform:translateY(0);
+    opacity:1;
+  }
+
 }
 
 
-footer p {
-  margin: 18px 0 0;
+/* =========================
+   MOBILE
+========================= */
 
-  font-size: 12px;
-
-  opacity: 0.75;
-}
-
-
-/* ========================================
-   SMARTPHONE
-======================================== */
-
-@media (max-width: 700px) {
+@media(max-width:760px){
 
   /* NAV */
 
-  .nav {
-    padding: 15px 12px;
+  .nav{
+    height:65px;
 
-    align-items: flex-start;
+    padding:0;
   }
 
-  .brand {
-    width: 105px;
+  .brand img{
+    width:58px;
 
-    font-size: 21px;
+    height:40px;
   }
 
-  .nav nav {
-    gap: 13px;
+  .nav nav{
+    gap:13px;
 
-    margin-top: 4px;
+    font-size:8px;
+
+    letter-spacing:.12em;
   }
 
-  .nav nav a {
-    font-size: 10px;
-
-    letter-spacing: 0.1em;
-  }
-
-  .x-link {
-    font-size: 27px;
+  .x-link{
+    font-size:18px;
   }
 
 
-  /* HERO */
+  /* =========================
+     HERO
+  ========================= */
 
-  .hero {
-    min-height: 100svh;
+  .hero-photo{
+    background-position:
+      center center;
+
+    background-size:contain;
+
+    background-repeat:no-repeat;
   }
 
-
-  .hero-photo {
-    background-position: center bottom;
+  .hero{
+    min-height:100svh;
   }
 
+  /*
+    スマホも上を濃く、
+    下に向かって薄く
+  */
 
-  .hero-wash {
+  .hero-wash{
     background:
       linear-gradient(
         to bottom,
-        rgba(35, 125, 195, 0.82) 0%,
-        rgba(55, 145, 205, 0.68) 15%,
-        rgba(100, 180, 220, 0.40) 33%,
-        rgba(190, 225, 242, 0.14) 52%,
-        rgba(210, 235, 248, 0) 70%
+        rgba(5,116,207,.72) 0%,
+        rgba(25,135,210,.55) 18%,
+        rgba(80,165,220,.32) 38%,
+        rgba(180,215,238,.12) 58%,
+        rgba(255,255,255,0) 75%
+      ),
+      linear-gradient(
+        90deg,
+        #0a62c422,
+        #ffffff00 55%
       );
   }
 
 
-  .hero-content {
-    left: 8%;
-
-    top: 17%;
+  .hero-content{
+    padding:
+      0 7vw 9vh;
   }
 
+  .hero-message{
+    top:17vh;
 
-  .hero-content .eyebrow {
-    margin-bottom: 18px;
+    right:7vw;
 
-    font-size: 22px;
-  }
-
-
-  .hero-content h1 {
-    font-size: 76px;
-
-    line-height: 0.92;
-
-    letter-spacing: 0.08em;
-  }
-
-
-  .hero-content .date {
-    margin-top: 34px;
-
-    font-size: 25px;
-
-    letter-spacing: 0.08em;
-  }
-
-
-  .hero-content .venue {
-    margin-top: 10px;
-
-    font-size: 22px;
+    font-size:14px;
   }
 
 
   /*
-    スマホでは予約ボタンを
-    日映文化ホールの右側に置く
+    スマホでも会場名と予約ボタンを
+    横並びにする
   */
 
-  .hero-button {
-    margin-top: 0;
+  .venue{
+    display:inline-block;
 
-    margin-left: 18px;
+    font-size:16px;
 
-    min-width: 145px;
+    letter-spacing:.18em;
 
-    padding: 11px 24px;
+    margin-top:7px;
+  }
 
-    font-size: 15px;
+  .hero-button{
+    margin-top:0;
 
-    border-width: 2px;
+    margin-left:15px;
+
+    padding:10px 20px;
+
+    font-size:12px;
+
+    border-width:1.5px;
+  }
+
+  .hero-button::after{
+    margin-left:10px;
+
+    font-size:17px;
   }
 
 
-  .hero-button::after {
-    margin-left: 12px;
-
-    font-size: 19px;
+  .wave{
+    font-size:30px;
   }
 
 
-  .wave {
-    bottom: 6%;
+  /* =========================
+     SECTION
+  ========================= */
 
-    font-size: 15px;
+  .section{
+    padding:
+      90px 7vw;
+  }
+
+  .concept{
+    display:block;
+  }
+
+  .concept>div+div{
+    margin-top:55px;
   }
 
 
-  .scroll {
-    right: 6%;
+  /* =========================
+     MEMBER GRID
+  ========================= */
 
-    bottom: 7%;
+  .member-grid{
+    grid-template-columns:
+      repeat(2,1fr);
 
-    font-size: 11px;
+    margin-top:40px;
+  }
+
+  .member-card{
+    min-height:120px;
+
+    padding:18px;
   }
 
 
-  /* SECTION */
+  /*
+    スマホでは写真の中身だけ
+    個別に調整
+  */
 
-  .section {
-    padding: 75px 8%;
+  /* ファー */
+  .member-card:nth-child(1) img{
+    object-position:center 25%;
+    transform:scale(1.03);
+  }
+
+  /* こむぎ */
+  .member-card:nth-child(2) img{
+    object-position:center 27%;
+    transform:scale(1.03);
+  }
+
+  /* クリストファー */
+  .member-card:nth-child(3) img{
+    object-position:center 24%;
+    transform:scale(1.04);
+  }
+
+  /* よじゅん */
+  .member-card:nth-child(4) img{
+    object-position:center 25%;
+    transform:scale(1.04);
+  }
+
+  /* タンタル */
+  .member-card:nth-child(5) img{
+    object-position:center 27%;
+    transform:scale(1.04);
+  }
+
+  /* しゅがー */
+  .member-card:nth-child(6) img{
+    object-position:center 23%;
+    transform:scale(1.04);
   }
 
 
-  .section-label {
-    margin-bottom: 25px;
+  .member-card-text{
+    left:18px;
 
-    font-size: 13px;
+    bottom:16px;
+  }
+
+  .member-card-text span{
+    font-size:10px;
+  }
+
+  .member-card-text strong{
+    font-size:18px;
   }
 
 
-  .section h2 {
-    font-size: 42px;
+  /* =========================
+     MEMBER MODAL
+  ========================= */
+
+  .member-panel{
+    width:100%;
+
+    max-height:94svh;
+
+    padding:
+      40px 7vw 45px;
+  }
+
+  .member-panel h2{
+    font-size:34px;
+  }
+
+  .member-close{
+    top:15px;
+
+    right:18px;
+
+    font-size:32px;
   }
 
 
-  .lead {
-    margin-bottom: 40px;
+  /* スマホは写真を横幅いっぱい */
 
-    font-size: 17px;
+  .member-slide img{
+    width:100%;
+
+    aspect-ratio:4 / 5;
+
+    object-fit:cover;
   }
 
 
-  /* CONCEPT */
+  /* =========================
+     HISTORY
+  ========================= */
 
-  .concept {
-    display: block;
+  .timeline span{
+    display:block;
+
+    width:max-content;
+
+    white-space:nowrap;
+
+    word-break:keep-all;
+
+    overflow-wrap:normal;
+
+    margin-bottom:8px;
+  }
+
+  .timeline p{
+    line-height:1.8;
+
+    word-break:normal;
+
+    overflow-wrap:break-word;
   }
 
 
-  .concept p {
-    font-size: 16px;
+  /* =========================
+     LIVE
+  ========================= */
+
+  .live-card{
+    padding:28px;
   }
 
-
-  /* MEMBER */
-
-  #member {
-    padding-top: 80px;
+  .live-card>div{
+    display:block;
   }
 
+  .live-card strong{
+    display:block;
 
-  .member-grid {
-    grid-template-columns: 1fr;
-
-    gap: 3px;
+    margin-top:7px;
   }
 
-
-  .member-card {
-    aspect-ratio: 1.35 / 1;
-  }
-
-
-  .member-card .member-card-text,
-  .member-card .card-text {
-    left: 20px;
-
-    bottom: 18px;
-  }
-
-
-  .member-card .member-card-text span,
-  .member-card .card-text span {
-    font-size: 11px;
-
-    margin-bottom: 5px;
-  }
-
-
-  .member-card .member-card-text strong,
-  .member-card .card-text strong {
-    font-size: 27px;
-  }
-
-
-  /* MODAL */
-
-  .member-panel {
-    width: 92vw;
-
-    max-height: 88vh;
-
-    padding: 35px 20px 30px;
-  }
-
-
-  .member-panel h2 {
-    font-size: 34px;
-  }
-
-
-  .member-close {
-    top: 10px;
-    right: 10px;
-  }
-
-
-  .member-profile {
-    font-size: 14px;
-
-    line-height: 1.8;
-  }
-
-
-  /* HISTORY */
-
-  .timeline p {
-    grid-template-columns: 1fr;
-
-    gap: 5px;
-
-    font-size: 15px;
-  }
-
-
-  .timeline span {
-    font-size: 13px;
-  }
-
-
-  /* LIVE */
-
-  .live-card {
-    padding: 28px 22px;
-  }
-
-
-  .live-card strong {
-    font-size: 18px;
-  }
-
-
-  /* FOOTER */
-
-  footer {
-    padding: 40px 8%;
-  }
 }
