@@ -100,13 +100,22 @@ a{
 
   color:white;
 
-  display:flex;
-  align-items:flex-end;
+  background:#dff3fc;
 }
+
+
+/* メイン写真 */
 
 .hero-photo{
   position:absolute;
-  inset:0;
+  z-index:0;
+
+  left:0;
+  right:0;
+  bottom:0;
+
+  width:100%;
+  height:72%;
 
   background:
     url("images/main.jpg")
@@ -115,31 +124,48 @@ a{
     no-repeat;
 }
 
+
+/* 写真の上のフィルター
+   ★ 左側の青を弱くして明るく */
+
 .hero-wash{
   position:absolute;
   inset:0;
+  z-index:1;
 
   background:
     linear-gradient(
       90deg,
-      #0a62c455,
-      #ffffff00 55%
+      rgba(255,255,255,.18) 0%,
+      rgba(255,255,255,.08) 35%,
+      rgba(255,255,255,0) 60%
     ),
     linear-gradient(
-      0deg,
-      #075bb366,
-      #0000 45%
+      180deg,
+      rgba(255,255,255,.08) 0%,
+      rgba(255,255,255,.04) 45%,
+      rgba(7,91,179,.08) 100%
     );
 }
 
-.hero-content{
-  position:relative;
-  z-index:2;
 
-  padding:0 6vw 11vh;
+/* ヒーロー文字 */
+
+.hero-content{
+  position:absolute;
+  z-index:3;
+
+  left:6vw;
+
+  /* ★ PCでは少し下げる */
+  top:23%;
+
+  padding:0;
+
+  color:white;
 
   text-shadow:
-    0 2px 15px #0750a455;
+    0 2px 12px rgba(7,80,160,.15);
 }
 
 .eyebrow{
@@ -178,6 +204,50 @@ h1{
   margin-top:7px;
 }
 
+
+/* =========================
+   予約ボタン
+========================= */
+
+.hero-button{
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  margin-top:28px;
+
+  padding:12px 30px;
+
+  border:1px solid rgba(255,255,255,.95);
+  border-radius:999px;
+
+  color:white;
+  background:transparent;
+
+  font-size:15px;
+  letter-spacing:.14em;
+
+  transition:.25s ease;
+}
+
+.hero-button::after{
+  content:"→";
+
+  margin-left:16px;
+
+  font-size:19px;
+}
+
+.hero-button:hover{
+  background:rgba(255,255,255,.18);
+}
+
+
+/* =========================
+   HERO MESSAGE
+========================= */
+
 .hero-message{
   position:absolute;
   z-index:2;
@@ -191,6 +261,11 @@ h1{
 
   letter-spacing:.2em;
 }
+
+
+/* =========================
+   WAVE
+========================= */
 
 .wave{
   position:absolute;
@@ -209,6 +284,11 @@ h1{
 
   opacity:.95;
 }
+
+
+/* =========================
+   SCROLL
+========================= */
 
 .scroll{
   position:absolute;
@@ -300,9 +380,6 @@ h1{
   margin-top:50px;
 }
 
-
-/* メンバーカード */
-
 .member-card{
   position:relative;
 
@@ -334,7 +411,7 @@ h1{
 }
 
 
-/* カード写真 */
+/* メンバー写真 */
 
 .member-card img{
   position:absolute;
@@ -349,17 +426,13 @@ h1{
 
   object-fit:cover;
 
-  /*
-    数字を小さくすると
-    写真が上に移動する
-  */
   object-position:center 35%;
 
   z-index:0;
 }
 
 
-/* カード写真の青フィルター */
+/* カードのフィルター */
 
 .member-card-overlay{
   position:absolute;
@@ -370,9 +443,6 @@ h1{
   width:100%;
   height:100%;
 
-  /*
-    かなり薄め
-  */
   background:
     linear-gradient(
       transparent 35%,
@@ -464,9 +534,6 @@ h1{
   display:flex;
 }
 
-
-/* 背景 */
-
 .member-overlay{
   position:absolute;
 
@@ -480,9 +547,6 @@ h1{
   animation:
     fadeIn .35s ease;
 }
-
-
-/* 詳細パネル */
 
 .member-panel{
   position:relative;
@@ -508,9 +572,6 @@ h1{
     panelUp .45s ease;
 }
 
-
-/* 閉じる */
-
 .member-close{
   position:absolute;
 
@@ -531,9 +592,6 @@ h1{
 
   cursor:pointer;
 }
-
-
-/* MEMBER 01 */
 
 .member-panel-label{
   color:#2872da;
@@ -557,16 +615,13 @@ h1{
 
 .member-role{
   margin:
-    8px 0 28px
-    !important;
+    8px 0 28px !important;
 
   color:#2872da;
 
-  font-size:12px
-    !important;
+  font-size:12px !important;
 
-  letter-spacing:.25em
-    !important;
+  letter-spacing:.25em !important;
 }
 
 
@@ -597,9 +652,6 @@ h1{
   display:none;
 }
 
-
-/* 1枚ぶん */
-
 .member-slide{
   flex:
     0 0 100%;
@@ -612,9 +664,6 @@ h1{
 
   justify-content:center;
 }
-
-
-/* PCの写真 */
 
 .member-slide img{
   display:block;
@@ -884,25 +933,116 @@ footer p{
   }
 
 
-  /* HERO */
+  /* =========================
+     HERO
+  ========================= */
+
+  .hero{
+    min-height:100svh;
+
+    background:#dff3fc;
+  }
 
   .hero-photo{
-    background-position:
-      center center;
+    top:auto;
+    bottom:0;
 
-    background-size:contain;
+    height:63%;
+
+    background-position:center center;
+
+    background-size:cover;
 
     background-repeat:no-repeat;
   }
 
-  .hero{
-    min-height:100svh;
+  .hero-wash{
+    background:
+      linear-gradient(
+        90deg,
+        rgba(255,255,255,.10) 0%,
+        rgba(255,255,255,.04) 40%,
+        rgba(255,255,255,0) 70%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(160,215,242,.28) 0%,
+        rgba(220,243,252,.05) 38%,
+        rgba(220,243,252,0) 58%,
+        rgba(7,91,179,.08) 100%
+      );
   }
 
+
+  /* スマホの文字 */
+
   .hero-content{
-    padding:
-      0 7vw 9vh;
+    left:7vw;
+    top:13%;
+
+    padding:0;
+
+    text-shadow:
+      0 2px 12px rgba(7,80,160,.18);
   }
+
+  .eyebrow{
+    font-size:24px;
+
+    margin-bottom:12px;
+  }
+
+  h1{
+    font-size:clamp(58px,17vw,82px);
+
+    letter-spacing:.12em;
+
+    line-height:.95;
+
+    margin:0 0 12px;
+  }
+
+  .date{
+    font-size:25px;
+
+    letter-spacing:.10em;
+  }
+
+  .date span{
+    font-size:.48em;
+  }
+
+  .venue{
+    font-size:19px;
+
+    letter-spacing:.16em;
+
+    margin-top:6px;
+  }
+
+
+  /* スマホ予約ボタン */
+
+  .hero-button{
+    margin-top:22px;
+
+    padding:10px 26px;
+
+    border:1px solid rgba(255,255,255,.95);
+
+    border-radius:999px;
+
+    font-size:14px;
+
+    letter-spacing:.12em;
+  }
+
+  .hero-button::after{
+    margin-left:13px;
+
+    font-size:18px;
+  }
+
 
   .hero-message{
     top:17vh;
@@ -916,8 +1056,18 @@ footer p{
     font-size:30px;
   }
 
+  .scroll{
+    right:3vw;
 
-  /* SECTION */
+    bottom:7vh;
+
+    font-size:9px;
+  }
+
+
+  /* =========================
+     SECTION
+  ========================= */
 
   .section{
     padding:
@@ -989,9 +1139,6 @@ footer p{
     font-size:32px;
   }
 
-
-  /* スマホは写真を横幅いっぱい */
-
   .member-slide img{
     width:100%;
 
@@ -1047,5 +1194,3 @@ footer p{
   }
 
 }
-
-  
